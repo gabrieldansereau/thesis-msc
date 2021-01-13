@@ -1,0 +1,116 @@
+%% To change chapter header dynamically from french to english, use
+%%\entetedynamique
+\setcounter{corA}{0} % Pour recommancer à compter les def,
+                     % theo, etc. à partir de 1
+ % Pour écrire un article en français
+\francais
+ % Pour écrire un article en anglais
+%%\anglais
+%% NOTE: La plupart des macros ont un nom en anglais.
+%% P.ex. \adresse et \address fonctionnent et sont équivalents.
+%% \revue=\journal
+%% \auteur=\author
+%% \titre=\title
+
+ % Nom de la revue de publication
+\revue{Une revue}
+\article{Titre de l'article}
+
+ % Contribution(s) peronnelle(s) à l'article et rôle joué par tous les coauteurs
+ %
+ % Nécessaire seulement lorsque vous n'êtes pas seul·e auteur·e.
+ % Les contributions peuvent apparaître ailleur dans la thèse.
+ % Si \contributions est laissé vide (p.ex. si vous effacez
+ % celui ci-bas), aucune contributions ne seront générées sur
+ % la page titre de l'article.
+ %
+ % REMARQUE : L'exemple est sous forme d'\itemize,
+ % mais toutes les constructions \LaTeX\ sont permises.
+ % La commande peut aussi contenir un simple petit texte.
+ %
+ % La commande admet une option [<entête>]
+\contributions%[Mes contributions et le rôle des coauteurs]
+{
+    \begin{itemize}
+        \item Calcul de telle chose;
+        \item Vérification de telle équation;
+        \item Idée pour telle définition;
+        \item Démonstration de tel théorème.
+    \end{itemize}
+
+    Le coauteur1 a suggéré telle chose.
+
+    Le coauteur2 a fait telle calcul.\\[1cm]
+}
+%% Les contributions apparaîtrons après
+%% \maketitle. Selon les goûts, il est
+%% possible de mettre les contributions
+%% avant, simplement en les écrivant
+%% directement ici. Par exemple :
+ % \section*{Contributions de <mon nom> et rôle joué par les coauteurs}
+ % J'ai contribué en...
+ %
+ % Le rôle des coauteurs a été de...
+ % \cleardoublepage
+
+%%% INFORMATIONS POUR LA PAGE TITRE
+ % Premier auteur·e et adresse
+\auteur{Hima Ginère}
+\adresse{1252i rue complexe\\ Université du plan complexe}
+ % Deuxième auteur·e et adresse (si différente de la première)
+%%\auteur{Hana Lietick}
+%%\adresse{4242 rue imaginaire\\ Universität von der gau\ss sche Zahlenebene}
+%%
+%% et ainsi de suite pour les autres auteurs
+
+\maketitle
+
+\begin{resume}{Mots clés}
+  Le résumé en français.
+\end{resume}
+
+\begin{abstract}{Key words}
+  The english abstract.
+\end{abstract}
+
+\section{Introduction}
+%%
+%% Le reste de l'article...
+%%
+
+
+Exemple de citation~: Consultez le \LaTeX\ companien
+de Mittelbach {\it et al\/}\@. \cite{exemple}.
+
+ % Pour générer la bibliographie à la fin
+ % de l'article, utiliser la commande de la
+ % classe <dms> \sectionbibliography{<nom du .bib>}.
+ % Il y a aussi la possibilité d'utiliser le package
+ % <chapterbib>, auquel cas on utilise simplement
+ % \bibliography normalement.
+ %
+ % IMPORTANT : Dans tous les cas, il faut faire
+ %    pdflatex these
+ %    bibtex chapitre1
+ %    bibtex chapitre2
+ %    .
+ %    .
+ %    .
+ %    bibtex chapitreN
+ %    pdflatex these
+ %    pdflatex these
+ %
+ % où <these> est le nom du .tex principal
+ % (qui contient le \documentclass).
+ % bibtex a besoin du .aux de chapitre1 et
+ % non du .tex. Il est parfois nécessaire
+ % d'effacer le .aux et de recommencer la
+ % compilation du début.
+%%\bibliographystyle{plain} % style plain anglais ou
+\bibliographystyle{plain-fr} % style plain francais
+%%\bibliographystyle{<style>} % autre
+\sectionbibliography{ref.bib} %Donner le nom du .bib
+
+\endinput
+%%
+%% End of file `article1.tex'.
