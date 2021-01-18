@@ -44,7 +44,7 @@
 
 %% La classe <dms> est construite au-dessus de <amsbook>, donc
 %% <amsmath>, <amsfonts> et <amsthm> sont automatiquement chargés.
-\documentclass[12pt,twoside,phd]{dms}
+\documentclass[12pt,twoside,maitrise]{dms}
 \usepackage[utf8]{inputenc} %Obligatoires
 \usepackage[T1]{fontenc}    %
 
@@ -62,7 +62,9 @@
 %% (Parfois le problème est au niveau de l'installation, donc
 %%  essayez de compiler sur un autre ordinateur sur lequel vous êtes
 %%  certain·e que l'installation est bonne.)
-\usepackage{lmodern}
+% \usepackage{lmodern}
+\usepackage{times}
+% \usepackage{libertine}
 
 %% Il n'est pas nécessaire d'utiliser <babel>, car
 %% les commandes intégrées par la classe <dms>
@@ -136,12 +138,14 @@
   % dans un terminal.) Ces données sont utiles, par exemple,
   % pour augmenter les chances qu'un algorithme de recherche
   % trouve votre document sur Internet, une fois diffusé.
-%%\hypersetup{
-%%  pdftitle = {Titre de la thèse / du mémoire},
-%%  pdfauthor = {auteur·e},
-%%  pdfsubject = {Ex: Transformation de Fourier ; régressions linéaires ; ... },
-%%  pdfkeywords = {Ex: mathématiques, statistiques, groupes, variables aléatoires,...}
-%%}
+\hypersetup{
+ pdftitle = {Évaluation du caractère unique des communautés écologiques sur des
+ échelles spatiales étendues et continues},
+ pdfauthor = {Gabriel Dansereau},
+ pdfsubject = {Ex: betadiversity, species distribution modelling, ecological communities},
+ pdfkeywords = {Ex: community ecology, biogeography, species distribution
+ modelling, spatial scales}
+}
 
 %% Définition des environnements utiles pour un mémoire scientifique.
 %% La numérotation est laissée à la discrétion de l'auteur·e. L'exemple
@@ -266,7 +270,7 @@
 
 \date{\today} %Date du DÉPÔT INITIAL (ou du 2e dépôt s'il y a corrections majeures)
 
-\sujet{Discipline}
+\sujet{Sciences biologiques}
 %%\orientation{orientation}%Ce champ est optionnel
 %%
 %% Voici les disciplines possibles (voir avec votre directeur):
@@ -278,9 +282,9 @@
 
 \president{Nom du président du jury}
 
-\directeur{Nom du directeur de recherche}
+\directeur{Timothée Poisot}
 
-%%\codirecteur{Nom du 1er codirecteur}         % s'il y a lieu
+\codirecteur{Pierre Legendre}         % s'il y a lieu
 %%\codirecteurs{Nom du 2e codirecteur}         % s'il y a lieu
 
 \membrejury{Nom du membre de jury}
