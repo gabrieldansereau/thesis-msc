@@ -10,7 +10,7 @@
 
 all: thesis
 thesis: thesis.pdf
-test: test.tex
+md2tex: assets/_article1.tex
 
 # CUSTOM BUILD RULES
 # -----------------------------------------------------------------------------
@@ -26,8 +26,8 @@ test: test.tex
 #         ./dat2tex $< > $@
 
 
-test.tex: test.md
-	pandoc --natbib -o test.tex test.md
+assets/_article1.tex: article1.md
+	pandoc --natbib -o assets/_article1.tex article1.md
 
 # MAIN LATEXMK RULE
 # -----------------------------------------------------------------------------
@@ -37,7 +37,7 @@ test.tex: test.md
 # -interaction=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
-thesis.pdf: thesis.tex introduction.tex article1.tex test.tex
+thesis.pdf: thesis.tex introduction.tex article1.tex assets/_article1.tex references.bib
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 clean:
@@ -50,4 +50,4 @@ rm:
 	@rm -f *.bbl
 	@rm -f *.run.xml
 	rm thesis.pdf
-	rm test.tex
+	rm assets/_article1.tex
