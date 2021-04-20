@@ -10,7 +10,7 @@
 
 all: thesis
 thesis: thesis.pdf
-md2tex: assets/_article1.tex
+md2tex: assets/_article1.tex assets/_introduction.tex
 
 # CUSTOM BUILD RULES
 # -----------------------------------------------------------------------------
@@ -29,6 +29,9 @@ md2tex: assets/_article1.tex
 assets/_article1.tex: article1.md
 	pandoc --natbib -o assets/_article1.tex article1.md
 
+assets/_introduction.tex: introduction.md
+	pandoc --natbib -o assets/_introduction.tex introduction.md
+
 # MAIN LATEXMK RULE
 # -----------------------------------------------------------------------------
 # -pdf tells latexmk to generate PDF directly (instead of DVI).
@@ -37,7 +40,7 @@ assets/_article1.tex: article1.md
 # -interaction=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
-thesis.pdf: thesis.tex introduction.tex article1.tex assets/_article1.tex references.bib
+thesis.pdf: thesis.tex introduction.tex article1.tex references.bib assets/_article1.tex assets/_introduction.tex 
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 clean:
