@@ -3,9 +3,9 @@
 \setcounter{corA}{0} % Pour recommancer à compter les def,
                      % theo, etc. à partir de 1
  % Pour écrire un article en français
-\francais
+% \francais
  % Pour écrire un article en anglais
-%%\anglais
+\anglais
 %% NOTE: La plupart des macros ont un nom en anglais.
 %% P.ex. \adresse et \address fonctionnent et sont équivalents.
 %% \revue=\journal
@@ -73,15 +73,15 @@
   The english abstract.
 \end{abstract}
 
-\section{Introduction}
+% \section{Introduction}
 %%
 %% Le reste de l'article...
 %%
 
 \input{assets/_article1.tex}
 
-Exemple de citation~: Consultez le \LaTeX\ companien
-de Mittelbach {\it et al\/}\@. \citeyearpar{exemple}.
+% Exemple de citation~: Consultez le \LaTeX\ companien
+% de Mittelbach {\it et al\/}\@. \citeyearpar{exemple}.
 
  % Pour générer la bibliographie à la fin
  % de l'article, utiliser la commande de la
@@ -110,7 +110,8 @@ de Mittelbach {\it et al\/}\@. \citeyearpar{exemple}.
 %%\bibliographystyle{plain} % style plain anglais ou
 % \bibliographystyle{plain-fr} % style plain francais
 % \bibliographystyle{plainnat-fr}
-\bibliographystyle{apalike-fr}
+% \bibliographystyle{apalike-fr}
+\bibliographystyle{apalike}
 %%\bibliographystyle{<style>} % autre
 \sectionbibliography{references.bib} %Donner le nom du .bib
 
