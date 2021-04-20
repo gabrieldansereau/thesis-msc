@@ -10,7 +10,7 @@
 
 all: thesis
 thesis: thesis.pdf
-
+test: test.tex
 
 # CUSTOM BUILD RULES
 # -----------------------------------------------------------------------------
@@ -26,6 +26,9 @@ thesis: thesis.pdf
 #         ./dat2tex $< > $@
 
 
+test.tex: test.md
+	pandoc --natbib -o test.tex test.md
+
 # MAIN LATEXMK RULE
 # -----------------------------------------------------------------------------
 # -pdf tells latexmk to generate PDF directly (instead of DVI).
@@ -34,7 +37,7 @@ thesis: thesis.pdf
 # -interaction=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
-thesis.pdf: thesis.tex introduction.tex article1.tex
+thesis.pdf: thesis.tex introduction.tex article1.tex test.tex
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 clean:
@@ -47,3 +50,4 @@ rm:
 	@rm -f *.bbl
 	@rm -f *.run.xml
 	rm thesis.pdf
+	rm test.tex
