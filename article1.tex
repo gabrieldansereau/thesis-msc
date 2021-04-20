@@ -78,9 +78,10 @@
 %% Le reste de l'article...
 %%
 
+\input{test.tex}
 
 Exemple de citation~: Consultez le \LaTeX\ companien
-de Mittelbach {\it et al\/}\@. \cite{exemple}.
+de Mittelbach {\it et al\/}\@. \citeyearpar{exemple}.
 
  % Pour générer la bibliographie à la fin
  % de l'article, utiliser la commande de la
@@ -107,7 +108,9 @@ de Mittelbach {\it et al\/}\@. \cite{exemple}.
  % d'effacer le .aux et de recommencer la
  % compilation du début.
 %%\bibliographystyle{plain} % style plain anglais ou
-\bibliographystyle{plain-fr} % style plain francais
+% \bibliographystyle{plain-fr} % style plain francais
+% \bibliographystyle{plainnat-fr}
+\bibliographystyle{apalike-fr}
 %%\bibliographystyle{<style>} % autre
 \sectionbibliography{ref.bib} %Donner le nom du .bib
 
