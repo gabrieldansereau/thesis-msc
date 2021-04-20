@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+	],
+    "settings": {
+		"files.exclude": {
+			"*.aux": true,
+            "*.bbl": true,
+            "*.bcf": true,
+            "*.blg": true,
+            "*.fdb_latexmk": true,
+            "*.fls": true,
+            "*.lof": true,
+            "*.log": true,
+            "*.lot": true,
+            "*.out": true,
+            "*.run.xml": true,
+            "*.toc": true,
+		},
+	}
+}
