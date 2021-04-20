@@ -34,10 +34,16 @@ thesis: thesis.pdf
 # -interaction=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
-thesis.pdf: thesis.tex
+thesis.pdf: thesis.tex introduction.tex article1.tex
 	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 clean:
 	@latexmk -c
 	@rm -f *.bbl
 	@rm -f *.run.xml
+
+rm:
+	@latexmk -c
+	@rm -f *.bbl
+	@rm -f *.run.xml
+	rm thesis.pdf
