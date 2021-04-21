@@ -27,10 +27,10 @@ md2tex: assets/_article1.tex assets/_introduction.tex
 
 
 assets/_article1.tex: article1.md
-	pandoc --natbib -o assets/_article1.tex article1.md
+	pandoc --biblatex -o assets/_article1.tex article1.md
 
 assets/_introduction.tex: introduction.md
-	pandoc --natbib -o assets/_introduction.tex introduction.md
+	pandoc --biblatex -o assets/_introduction.tex introduction.md
 
 # MAIN LATEXMK RULE
 # -----------------------------------------------------------------------------

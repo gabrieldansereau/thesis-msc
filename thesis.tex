@@ -48,7 +48,8 @@
 \usepackage[utf8]{inputenc} %Obligatoires
 \usepackage[T1]{fontenc}    %
 % \usepackage{natbib}
-\usepackage[natbibapa]{apacite}
+% \usepackage[natbibapa]{apacite}
+% \usepackage[american]{babel}
 
 %% <lmodern> incorpore les fontes en T1, pour
 %% faciliter le dépôt final. Ceci n'est pas la
@@ -78,7 +79,11 @@
 \francais % or
 %%\anglais
 %%
-\usepackage[english,frenchb]{babel}
+\usepackage[english,french]{babel}
+\usepackage{csquotes}
+\usepackage[style=apa, natbib=true, backend=biber]{biblatex}
+
+\addbibresource{references.bib}
 
  % ENGLISH OPTION
  % If you call \anglais here before the \begin{document},
