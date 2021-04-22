@@ -37,7 +37,7 @@ La biodiversité comporte une composante spatiale très importante, dont la conc
 
 Notre conception de la biodiversité dans l'espace a évolué avec le temps, allant d'une conception large de la structure spatiale de la biodiversité d'une région
 
-Whittaker a été le premier à décrire les concepts de diversité alpha, bêta et gamma. 
+[@Whittaker1960VegSis; @Whittaker1972EvoMea] a été le premier à décrire les concepts de diversité alpha, bêta et gamma. 
 
 La diversité bêta représente la variation dans la composition en espèces au sein des sites d'une région géographique d'intérêt [@Legendre2005AnaBet].
 
@@ -52,3 +52,23 @@ Quelques études récentes l'ont utilisée sur des données arrangées en grille
 Une étude récente l'a utilisée sur un grand nombre de sites [@Niskanen2017DriHig]. Cette dernière a également cherché à prédire la mesure directement en fonction de conditions environnementales.
 
 Une avenue intéressante a été exploré par @Vasconcelos2018ExpImp en utilisant la mesure sur des prédictions réalisés par des modèles de distribution d'espèces en fonction des conditions climatiques actuelles et de scénarios de changements climatiques. 
+
+# Données
+
+De plus en plus de données sont disponibles en ligne, et ce, massivement. Il faut donc passer vers une approche dirigée par les données disponibles dans une optique de synthèse, ce qui permet généralement de révéler de nouvelles informations écologiques à partir de données existantes[@Poisot2019DatSyn].
+
+De grandes bases de données sur la biodiversité fournissent des informations écologiques à exploiter, notamment eBird, GBIF et iNaturalist.
+
+En même temps, nous disposons désormais de données de plus en plus précises sur les conditions environnementales partout sur le globe. Par exemple, WorldClim et Chelsa fournissent des données climatiques, alors que Copernicus et EarthEnv fournissent des informations sur l'utilisation du territoire. Dans les deux cas, ces informations sont parfois disponibles à des échelles spatiales très fines. 
+
+# Modèles
+
+L'étude de la biodiversité dans l'espace peut également profiter de l'essor des méthodes prédictives, entre autres celles issues de l'intelligence artificielle. Les modèles de distribution d'espèces (_species distribution models_, SDM) [@Guisan2005PreSpe] servent notamment à prédire la distribution des espèces en fonction des conditions environnementales à partir d'observations déjà réalisées. 
+
+Il existe une grande variété de SDM, allant des premiers modèles comme BIOCLIM [@Nix1986BioAna], à des modèles plus récents comme MAXENT [@Phillips2006MaxEnt; @Phillips2008ModSpe] et à différentes méthodes apparentées à l'intelligence artificielle (et non spécifique à la distribution d'espèces), notamment les _Randoms Forests_ [@Breiman2001RanFor] ou encore les _Boosted Regression Trees_ [@Elith2008WorGui].
+
+@Carlson2020EmbSpe ont récemment suggéré d'utiliser les _Bayesian Additive Regression Trees_ (BART)[@Chipman2010BarBay] pour les SDM, ce qui permet d'obtenir de meilleurs résultats en réduisant le sur-ajustement, tout en permettant d'évaluer l'incertitude sous une formulation bayésienne.
+
+Plusieurs de ces méthodes représentent toutefois des méthodes d'apprentissage supervisé, de sorte qu'elles ont besoin d'être entraînées sur des données déjà étiquetées. La principale conséquence au niveau des SDM est donc le besoin de disposer de données d'absence, en plus de données de présence, afin de pouvoir entraîner les algorithmes. Or, les données d'absence sont plus difficiles à obtenir, notamment en raison du problème du double-zéro [@Legendre2012NumEco]. 
+
+La base de données _eBird_ comporte toutefois un avantage à ce sujet, puisqu'il s'agit d'une base de données semi-structurée [@Johnston2020AnaGui]. Les données (et donc les observations) y sont structurées par listes d'observations. En rapportant leurs observations, les utilisateurs doivent déclarer si celles-ci constituent une liste complète des espèces détectées lors de leur échantillonnage. Ainsi, cela permet un peu plus justement d'inférer la non-détection d'autres espèces
