@@ -30,3 +30,25 @@ Mon projet est donc à la jonction de ces éléments. J'ai exploré les bases de
 L’identification des zones clés de biodiversité est l’une des priorités pour la conservation et la gestion des aires protégées. En particulier, il y a actuellement un besoin pour développer des méthodes permettant d'identifier les sites les plus importants pour la biodiversité de façon efficace sur de grandes étendues spatiales. Or, identifier de tels endroits implique plusieurs questions complexes. En premier, il est nécessaire de définir ce que constituent des zones clés de biodiversité. Plusieurs définitions et plusieurs mesures ont été suggérées à ce sujet, mais celles-ci varient généralement quand à l'étendue spatiale ou aux régions ciblées. Ensuite, au-delà de la définition de la biodiversité, il est nécessaire de trouver des données qui permettent d'évaluer avec justesse le caractère unique ou exceptionnel des sites. La récolte de données en écologie est parfois difficile à certains endroits, par exemple pour certaines régions éloignées. Lorsque nécessaire, les observations directes peuvent parfois être remplacées par des prédictions réalisées à partir de données plus générales. Par contre, une panoplie de méthodes prédictives existent et la plupart d'entre elles n'ont pas été évaluées spécifiquement avec certaines mesures de biodiversité. Finalement, il est également nécessaire d'adapter à la fois les mesures de biodiversité et les méthodes prédictives aux grandes étendues spatiales. La biodiversité varie parfois différemment en fonction des échelles. Il en est de même quand à la performance des mesures. Intégrer le tout peut donc s'avérer complexe et implique d'avoir une compréhension développée des définitions de la biodiversité, des données et des méthodes disponibles, ainsi que des facteurs pouvant influencer la biodiversité en fonction des échelles spatiales.
 
 Dans mon mémoire, je me suis intéressé à cette question en cherchant à vérifier l'applicabilité d'une mesure donnée, celles des contributions locales à la diversité bêta, pour identifier les zones de biodiversité exceptionnelle à grande étendue spatiale. De plus, j'ai cherché à vérifier si cette méthode pouvait être appliquée à des prédictions de distribution d'espèces produites à partir de données provenant de grandes bases de données citoyennes. Mon mémoire est donc divisé en trois sections. La première comporte une mise en contexte, ainsi qu'une revue de littérature présentant les concepts pertinents. La seconde partie consiste en un article scientifique présentant les résultats de mes travaux et analyses. La dernière partie consiste en un retour sur les résultats, en lien avec la mise en contexte présentée dans la première section.
+
+# Biodiversité
+
+La biodiversité comporte une composante spatiale très importante, dont la conception a évolué avec le temps.
+
+Notre conception de la biodiversité dans l'espace a évolué avec le temps, allant d'une conception large de la structure spatiale de la biodiversité d'une région
+
+Whittaker a été le premier à décrire les concepts de diversité alpha, bêta et gamma. 
+
+La diversité bêta représente la variation dans la composition en espèces au sein des sites d'une région géographique d'intérêt [@Legendre2005AnaBet].
+
+La diversité bêta totale au sein d'une communauté peut, entre autres, être décomposée en contributions locales à la diversité bêta (_local contributions to beta diversity_, LCBD), ce qui permet d'identifier les sites possédant une composition en espèces exceptionnelle, donc une biodiversité unique [@Legendre2013BetDiv].
+
+La plupart des études ayant utilisé la mesure des LCBD l'ont utilisé à échelle locale, donc sur des étendues spatiales restreintes, et sur un petit nombre de sites [@Legendre2013BetDiv; @daSilva2014LocReg; @Heino2017ExpSpe; @Heino2017UnrCor]. Par exemple, l'étude ayant présenté la mesure l'a utilisé sur des communautés de poissons échantillonnées à intervalles le long d'une rivière [@Legendre2013BetDiv].
+
+Quelques études ont utilisé la mesure des LCBD sur de plus grandes étendues spatiales, donc comportant potentiellement une plus forte hétérogénéité spatiale, mais ces études comportaient un nombre de sites assez faible [@Yang2015ComSim; @Poisot2017HosPar; @Taranu2020LarMul].
+
+Quelques études récentes l'ont utilisée sur des données arrangées en grille, donc spatialement continues [@Tan2017HowBet; @Tan2019UndPro; @Legendre2019SpaTem; @DAntraccoli2020MorSpe]. Cependant, celles-ci portaient également sur des échelles spatiales restreintes. 
+
+Une étude récente l'a utilisée sur un grand nombre de sites [@Niskanen2017DriHig]. Cette dernière a également cherché à prédire la mesure directement en fonction de conditions environnementales.
+
+Une avenue intéressante a été exploré par @Vasconcelos2018ExpImp en utilisant la mesure sur des prédictions réalisés par des modèles de distribution d'espèces en fonction des conditions climatiques actuelles et de scénarios de changements climatiques. 
