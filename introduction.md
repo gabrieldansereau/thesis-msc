@@ -59,7 +59,7 @@ De plus en plus de données sont disponibles en ligne, et ce, massivement. Il fa
 
 De grandes bases de données sur la biodiversité fournissent des informations écologiques à exploiter, notamment eBird, GBIF et iNaturalist.
 
-En même temps, nous disposons désormais de données de plus en plus précises sur les conditions environnementales partout sur le globe. Par exemple, WorldClim et Chelsa fournissent des données climatiques, alors que Copernicus et EarthEnv fournissent des informations sur l'utilisation du territoire. Dans les deux cas, ces informations sont parfois disponibles à des échelles spatiales très fines. 
+En même temps, nous disposons désormais de données de plus en plus précises sur les conditions environnementales partout sur le globe. Par exemple, WorldClim et CHELSA fournissent des données climatiques, alors que Copernicus et EarthEnv fournissent des informations sur l'utilisation du territoire. Dans les deux cas, ces informations sont parfois disponibles à des échelles spatiales très fines. 
 
 # Modèles
 
@@ -72,3 +72,23 @@ Il existe une grande variété de SDM, allant des premiers modèles comme BIOCLI
 Plusieurs de ces méthodes représentent toutefois des méthodes d'apprentissage supervisé, de sorte qu'elles ont besoin d'être entraînées sur des données déjà étiquetées. La principale conséquence au niveau des SDM est donc le besoin de disposer de données d'absence, en plus de données de présence, afin de pouvoir entraîner les algorithmes. Or, les données d'absence sont plus difficiles à obtenir, notamment en raison du problème du double-zéro [@Legendre2012NumEco]. 
 
 La base de données _eBird_ comporte toutefois un avantage à ce sujet, puisqu'il s'agit d'une base de données semi-structurée [@Johnston2020AnaGui]. Les données (et donc les observations) y sont structurées par listes d'observations. En rapportant leurs observations, les utilisateurs doivent déclarer si celles-ci constituent une liste complète des espèces détectées lors de leur échantillonnage. Ainsi, cela permet un peu plus justement d'inférer la non-détection d'autres espèces
+
+Plusieurs méthodes ont été suggérées afin de réaliser des prédictions au niveau de la communauté à partir de SDM. La méthode la plus simple consiste à réaliser des prédictions séparées pour chaque espèce présente dans la communauté, puis à superposer les prédictions (_stacked SDM_, S-SDM ), de façon à connaître la composition en espèces pour chaque site d'une région d'intérêt [@Ferrier2002ExtSta; @Ferrier2006SpaMod]. Des méthodes plus complexes ont également été suggérées, notamment par @Guisan2011SesNew, @Pollock2014UndCoo, @Ovaskainen2017HowMak et @Staniczenko2017LinMac. Ces modèles ont l'avantage de prendre en compte plusieurs facteurs supplémentaires affectant la distribution des espèces, comme la co-occurrence entre les espèces, mais ils sont cependant plus complexes à réaliser.  Malgré leur simplicité, les S-SDM offrent toutefois des résultats comparables aux autres modèles quant aux prédictions de valeurs concernant les communautés [@Norberg2019ComEva; @Zurell2020TesSpe].
+
+# Enjeux spatiaux
+
+Plusieurs études ont cherché à comprendre les déterminants d'une forte mesure d'unicité écologique telle qu'évaluée par le mesure des LCBD.
+
+Or, ceux-ci ont peu été étudiés à grande échelle spatiale et sur un très grand nombre de sites.
+
+Selon la formulation initiale de @Legendre2013BetDiv, les LCBD devraient normalement identifier les sites les plus uniques, que ce soit en raison de leur nombre d'espèces élevé ou faible, d'une composition particulière dans une région ou en raison de la présence d'espèces rares. 
+
+Leur exemple initial a montré une relation négative entre la richesse spécifique et la valeur d'unicité [@Legendre2013BetDiv]. Ainsi, les sites les plus pauvres ressortent comme les plus uniques.
+
+Cette relation négative également été observée dans la plupart des études ayant repris la mesure [@Heino2017UnrCor], mais d'autres études ont montré que la relation pouvait également être positive  [@Kong2017SpaVar].
+
+Certaines études ont avancé que cette relation serait influencée par la présence d'espèces rares dans la communauté [@Yao2019VarCom]. La relation serait positive lorsque la proportion d'espèces rares est plus élevée.
+
+Par contre, la rareté est complexe à définir, en particulier sur de grandes étendues spatiales, où, par exemple, certaines espèces peuvent être très communes à échelle locale dans une région donnée, mais rares pour l'ensemble de la région, ce qui pourrait influencer la relation richesse-LCBD.
+
+De plus, la diversité bêta totale augmente avec l'étendue spatiale [@Barton2013SpaSca] et dépend de l'échelle, notamment en raison de l'augmentation de l'hétérogénéité spatiale, ainsi qu'en raison du recoupement de bassins d'espèces locaux différents [@Heino2015ComAna]. 
