@@ -25,6 +25,8 @@ Mon projet est donc à la jonction de ces éléments. J'ai exploré les bases de
     - Possibilité prédictions justes, inférences compensant manque données
 - Or, soulève questions sur l'applicabilité des mesures, sur ce qu'elles montrent réellement.
 
+Idée simple: Si les LCBD étaient utilisées sur des prédictions réalisées par des modèles de distribution d'espèces, cela permettrait d'obtenir des prédictions d'unicité écologique spatialement explicite à grande échelle spatiale, permettant d'identifier, rapidement, des sites importants pour la conservation.
+
 # Mise en contexte
 
 L’identification des zones clés de biodiversité est l’une des priorités pour la conservation et la gestion des aires protégées. En particulier, il y a actuellement un besoin pour développer des méthodes permettant d'identifier les sites les plus importants pour la biodiversité de façon efficace sur de grandes étendues spatiales. Or, identifier de tels endroits implique plusieurs questions complexes. En premier, il est nécessaire de définir ce que constituent des zones clés de biodiversité. Plusieurs définitions et plusieurs mesures ont été suggérées à ce sujet, mais celles-ci varient généralement quand à l'étendue spatiale ou aux régions ciblées. Ensuite, au-delà de la définition de la biodiversité, il est nécessaire de trouver des données qui permettent d'évaluer avec justesse le caractère unique ou exceptionnel des sites. La récolte de données en écologie est parfois difficile à certains endroits, par exemple pour certaines régions éloignées. Lorsque nécessaire, les observations directes peuvent parfois être remplacées par des prédictions réalisées à partir de données plus générales. Par contre, une panoplie de méthodes prédictives existent et la plupart d'entre elles n'ont pas été évaluées spécifiquement avec certaines mesures de biodiversité. Finalement, il est également nécessaire d'adapter à la fois les mesures de biodiversité et les méthodes prédictives aux grandes étendues spatiales. La biodiversité varie parfois différemment en fonction des échelles. Il en est de même quand à la performance des mesures. Intégrer le tout peut donc s'avérer complexe et implique d'avoir une compréhension développée des définitions de la biodiversité, des données et des méthodes disponibles, ainsi que des facteurs pouvant influencer la biodiversité en fonction des échelles spatiales.
@@ -33,11 +35,13 @@ Dans mon mémoire, je me suis intéressé à cette question en cherchant à vér
 
 # Biodiversité
 
-La biodiversité comporte une composante spatiale très importante, dont la conception a évolué avec le temps.
+La biodiversité comporte une composante spatiale très importante, dont la conception a évolué avec le temps. Dans cette section, j'expliquerai comment celle-ci est passée d'une formulation théorique large à une mesure spatialement explicite mesurant l'unicité écologique et pouvant être évaluée pour des endroits donnés. 
 
-Notre conception de la biodiversité dans l'espace a évolué avec le temps, allant d'une conception large de la structure spatiale de la biodiversité d'une région
+Depuis les premières formulations des composantes de la diversité des espèces par @Whittaker1960VegSis, une formulation étendue des concepts, l'attention s'est progressivement tournée vers le partitionnement de ces composantes, menant entre autres à la formulation d'une mesure spatialement explicite par @Legendre2013BetDiv pouvant être utilisée en conservation, et ce, y compris pour un très grand nombre de sites [@Niskanen2017DriHig] ou même sur des distributions d'espèces prédites [@Vasconcelos2018ExpImp].
 
-[@Whittaker1960VegSis; @Whittaker1972EvoMea] a été le premier à décrire les concepts de diversité alpha, bêta et gamma. 
+@Whittaker1960VegSis a détaillé trois composantes de la diversité des espèces au sein des communautés écologiques: 1) la diversité alpha, soit la richesse en espèce d'un site ou d'une communauté donnée, 2) la diversité beta, qui représente le degré de différenciation dans les composition des communautés au sein d'un environnement, et 3) la diversité gamma, soit la richesse en espèces des communautés d'un environnement une fois regroupées, de sorte que la diversité gamma est le résultat à la fois des diversités alpha et beta.
+
+Sous cette formulation initiale, la diversité bêta peut être mesurée comme le ratio entre la diversité gamma et la diversité alpha moyenne des sites d'un échantillon, autrement dit le ratio entre le nombre d'espèces totales et le nombre d'espèces moyen [@Whittaker1960VegSis; @Whittaker1972EvoMea].
 
 La diversité bêta représente la variation dans la composition en espèces au sein des sites d'une région géographique d'intérêt [@Legendre2005AnaBet].
 
