@@ -41,7 +41,7 @@ assets/_introduction.tex: introduction.md
 # missing file reference and interactively asking you for an alternative.
 
 thesis.pdf: thesis.tex introduction.tex article1.tex references.bib assets/_article1.tex assets/_introduction.tex 
-	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
+	latexmk -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 clean:
 	@latexmk -c
