@@ -50,3 +50,7 @@ L'étude de la biodiversité dans l'espace peut également profiter de l'essor d
 # Enjeux spatiaux
 
 Puisque la mesure des LCBD n'a pas encore été utilisée à la fois à grande échelle spatiale et sur un très grand nombre de sites, une telle démarche doit s'accompagner de vérifications pour comprendre quels sites sont alors identifiés comme uniques.
+
+Cependant, deux enjeux persistent quant à l'utilité de la mesure en conservation et pour la gestion des aires protégées, de même qu'en lien avec les déterminants d'une forte unicité écologique. 
+
+Plusieurs études ont cherché à comprendre les déterminants d'une forte mesure d'unicité écologique telle qu'évaluée par le mesure des LCBD. Or, ceux-ci ont peu été étudiés à grande échelle spatiale et sur un très grand nombre de sites.
