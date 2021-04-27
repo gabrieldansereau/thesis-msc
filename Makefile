@@ -26,8 +26,10 @@ md2tex: assets/_article1.tex assets/_introduction.tex
 #         ./dat2tex $< > $@
 
 
-assets/_article1.tex: article1.md
-	pandoc --biblatex --filter pandoc-crossref -o assets/_article1.tex article1.md
+assets/_article1.tex: ../ms_betadiversity_hotspots/manuscript.md
+	cp ../ms_betadiversity_hotspots/manuscript.md assets/_article1.md
+	cp ../ms_betadiversity_hotspots/figures/* figures/
+	pandoc --biblatex --citeproc --filter pandoc-crossref -o assets/_article1.tex assets/_article1.md
 
 assets/_introduction.tex: introduction.md
 	pandoc --biblatex --filter pandoc-crossref -o assets/_introduction.tex introduction.md
