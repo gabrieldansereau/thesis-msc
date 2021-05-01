@@ -11,7 +11,7 @@
     - Possibilité prédictions justes, inférences compensant manque données
 - Or, soulève questions sur l'applicabilité des mesures, sur ce qu'elles montrent réellement.
 
-Idée simple: Si les LCBD étaient utilisées sur des prédictions réalisées par des modèles de distribution d'espèces, cela permettrait d'obtenir des prédictions d'unicité écologique spatialement explicite à grande échelle spatiale, permettant d'identifier, rapidement, des sites importants pour la conservation.
+Idée simple: Si les LCBD étaient utilisées sur des prédictions réalisées par des modèles de répartition d'espèces, cela permettrait d'obtenir des prédictions d'unicité écologique spatialement explicite à grande échelle spatiale, permettant d'identifier, rapidement, des sites importants pour la conservation.
 
 Or, identifier de tels endroits soulève trois enjeux importants: 1) la
 définition de ce qui constitue réellement une zone clé ou un site de
@@ -37,7 +37,7 @@ La biodiversité comporte une dimension spatiale très importante, dont la conce
 
 Dans le cadre du présent mémoire, trois phases importantes sont à retenir du développement du concept de diversité bêta, soit une première phase portant sur la définition de la diversité bêta même, une deuxième sur son partitionnement et une troisième sur son utilisation comme mesure spatialement explicite pour évaluer l'unicité écologique de sites spécifiques.
 
-Depuis les premières formulations des composantes de la diversité des espèces par @Whittaker1960VegSis, une formulation étendue des concepts, l'attention s'est progressivement tournée vers le partitionnement de ces composantes, menant entre autres à la formulation d'une mesure spatialement explicite par @Legendre2013BetDiv pouvant être utilisée en conservation, et ce, y compris pour un très grand nombre de sites [@Niskanen2017DriHig] ou même sur des distributions d'espèces prédites [@Vasconcelos2018ExpImp].
+Depuis les premières formulations des composantes de la diversité des espèces par @Whittaker1960VegSis, une formulation étendue des concepts, l'attention s'est progressivement tournée vers le partitionnement de ces composantes, menant entre autres à la formulation d'une mesure spatialement explicite par @Legendre2013BetDiv pouvant être utilisée en conservation, et ce, y compris pour un très grand nombre de sites [@Niskanen2017DriHig] ou même sur des répartitions d'espèces prédites [@Vasconcelos2018ExpImp].
 
 @Legendre2005AnaBet ont reformulé la diversité bêta comme la variation dans la composition en espèces entre les des sites d'une région géographique d'intérêt. En comparant les mesures de diversité bêta par la variance de la matrice de communautés et par le partitionnement de la variation en mesures de distance, ils ont également montré que la variance de la matrice des communautés est la bonne mesure et peut être partitionné par partitionnement canonique, alors que le partitionnement par mesure de distances est inapproprié [@Legendre2005AnaBet].
 
@@ -62,7 +62,7 @@ La diversité bêta représente la variation dans la composition en espèces au 
 
 # Modèles 
 
-L'étude de la biodiversité dans l'espace peut également profiter de l'essor des méthodes prédictives, entre autres celles issues de l'intelligence artificielle. Les modèles de distribution d'espèces (_species distribution models_, SDM) [@Guisan2005PreSpe] servent notamment à prédire la distribution des espèces en fonction des conditions environnementales à partir d'observations déjà réalisées. 
+L'étude de la biodiversité dans l'espace peut également profiter de l'essor des méthodes prédictives, entre autres celles issues de l'intelligence artificielle. Les modèles de répartition d'espèces (_species distribution models_, SDM) [@Guisan2005PreSpe] servent notamment à prédire la répartition des espèces en fonction des conditions environnementales à partir d'observations déjà réalisées. 
 
 # Enjeux spatiaux
 
