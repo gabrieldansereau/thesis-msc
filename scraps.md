@@ -43,6 +43,23 @@ Depuis les premières formulations des composantes de la diversité des espèces
 
 La diversité bêta représente la variation dans la composition en espèces au sein des sites d'une région géographique d'intérêt [@Legendre2005AnaBet].
 
+@Koleff2003MeaBet ont également reformulé les mesures de diversité bêta pour effectuer des comparaison par paires, en fonction de trois composantes de concordance ou de non-concordance. Ainsi, pour une comparaison entre deux quadrats, $a$ est le nombre d'espèces partagées par les deux quadrats, $b$ est le nombre d'espèces absentes du quadrat focal, mais présentes dans le quadrat voisin, et $c$ est le nombre d'espèces présentes dans le quadrat focal, mais absentes dans le quadrat voisin. La recherche d'une valeur seule permettant de quantifier la variation a également mené à d'autres mesures, notamment les mesures additives et multiplicatives de @Jost2007ParDiv et de @Chao2012ProRes.
+
+- Structure dans @Legendre2012NumEco & @Borcard2018NumEco
+    - Deux aspects structure communautés: turnover, variation [@Anderson2011NavMul]
+    - Approche multiplicative [@Whittaker1960VegSis; @Whittaker1972EvoMea]
+        - Autres indices révisés par @Koleff2003MeaBet; @Tuomisto2010DivBet; @Anderson2011NavMul + @Chao2012ProRes ?
+    - Approche additive [@Lande1996StaPar; @Veech2002AddPar] - Par site ou mesure générale?
+    - Approche basée sur nombres de Hill [@Jost2007ParDiv]
+    - ~Distances~
+    - Calcul par variance [@Legendre2005AnaBet; @Legendre2013BetDiv]
+    - Calcul par dissimilarité [@Anderson2006MulDis; @Anderson2011NavMul], puis [@Legendre2013BetDiv], peut-être @Legendre2005AnaBet ?
+    - LCBD
+    - Partitionnement en remplacement, différence de richesse, emboîtement
+        - [@Legendre2014IntRep]
+        - Famille indices Podani @Podani2011NewCon
+        - Famille indices Baselga @Baselga2010ParTur; @Baselga2013MulSit
+
 # Modèles 
 
 L'étude de la biodiversité dans l'espace peut également profiter de l'essor des méthodes prédictives, entre autres celles issues de l'intelligence artificielle. Les modèles de distribution d'espèces (_species distribution models_, SDM) [@Guisan2005PreSpe] servent notamment à prédire la distribution des espèces en fonction des conditions environnementales à partir d'observations déjà réalisées. 
