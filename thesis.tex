@@ -168,12 +168,13 @@
   % pour augmenter les chances qu'un algorithme de recherche
   % trouve votre document sur Internet, une fois diffusé.
 \hypersetup{
- pdftitle = {Évaluation de l'unicité écologique sur des échelles spatiales
- étendues et continues},
+ pdftitle = {Évaluation de l'unicité écologique à grande étendue spatiale à 
+            l'aide de modèles de répartition d'espèces},
  pdfauthor = {Gabriel Dansereau},
- pdfsubject = {Ex: betadiversity, species distribution modelling, ecological communities},
- pdfkeywords = {Ex: community ecology, biogeography, species distribution
- modelling, spatial scales}
+ pdfsubject = {Ex: beta diversity, ecological uniqueness, species distribution 
+               modelling, ecological communities, spatial scales},
+ pdfkeywords = {Ex: beta diversity, community ecology, biogeography, 
+                species distribution modelling, spatial scales, ecological uniqueness}
 }
 
 %% Définition des environnements utiles pour un mémoire scientifique.
@@ -290,7 +291,8 @@
 %%% mémoire.
 %%%
 
-\title{Évaluation de l'unicité écologique sur des échelles spatiales étendues et continues}
+\title{Évaluation de l'unicité écologique à grande étendue spatiale à l'aide de 
+       modèles de répartition d'espèces}
 
 \author{Gabriel Dansereau}
 
@@ -300,7 +302,7 @@
 
 \date{\today} %Date du DÉPÔT INITIAL (ou du 2e dépôt s'il y a corrections majeures)
 
-\sujet{Sciences biologiques}
+\sujet{sciences biologiques}
 %%\orientation{orientation}%Ce champ est optionnel
 %%
 %% Voici les disciplines possibles (voir avec votre directeur):
@@ -425,14 +427,16 @@
 %%% \def\colun{\plusun\the\abbrlist. }
 %%\def\coldeux{\relax}
 \begin{twocolumnlist}{.2\textwidth}{.7\textwidth}
-  KQ-Methode & Méthode des moindres carrés, de l'allemand
-      \textit{Methode der kleinsten Quadrate}\\
-  MCMC  & Monte Carlo par chaînes de Markov, de l'anglais
-      \textit{Markov Chain Monte Carlo} \\
-  MSE  &  Erreur quadratique moyenne, de l'anglais \textit{Mean Square Error}\\
-  NDR & Retract d'un voisinage, de l'anglais \textit{Neighbourhood Deformation Retract}\\
-  OLS  &  Moindres carrés ordinaires, de l'anglais \textit{Ordinary Least Square}\\
-  ZFC & Théorie des ensembles de Zermelo-Fraenkel avec l'axiome du choix\\
+  LCBD  & Contributions locales à la diversité bêta 
+        (\textit{Local contributions to beta diversity})\\
+  SDM   & Modèles de répartition d'espèces
+        (\textit{Species distribution models}) \\
+  BART  & Arbres de régression additifs bayésiens 
+        (\textit{Bayesian additive regression trees})\\
+  RF    & Forêts d'arbres décisionnels
+        (\textit{Random Forests})\\
+  BRT   & Arbres de régression fortifiés
+        (\textit{Boosted regression trees})\\
 \end{twocolumnlist}
 %% L'environnement <threecolumnlist> existe aussi pour trois colonnes.
 
@@ -455,7 +459,7 @@
 
 
  % Il est recommandé que chaque article soit dans son propre .tex
- % Si la bibliographie de l'article doit appaître à la fin de
+ % Si la bibliographie de l'article doit apparaître à la fin de
  % l'article (plutôt qu'à la fin de la thèse), il obligatoire que
  % l'article soit dans son propre .tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -490,6 +494,10 @@
  % comment faire.
 %%\bibliographystyle{plain-fr}
 %%\bibliography{<fichier.bib>}
+
+\francais
+
+\printbibliography
 
  % Pour les annexes :
 \appendix

@@ -1,7 +1,8 @@
 %% To change chapter header dynamically from french to english, use
 %%\entetedynamique
-\setcounter{corA}{0} % Pour recommancer à compter les def,
+\setcounter{corA}{0} % Pour recommencer à compter les def,
                      % theo, etc. à partir de 1
+\setcounter{secnumdepth}{1}
  % Pour écrire un article en français
 % \francais
  % Pour écrire un article en anglais
@@ -13,13 +14,13 @@
 %% \titre=\title
 
  % Nom de la revue de publication
-\revue{Une revue}
-\article{Titre de l'article}
+\revue{Global Ecology and Biogeography}
+\article{Evaluating ecological uniqueness over broad spatial extents using species distribution modelling}
 
- % Contribution(s) peronnelle(s) à l'article et rôle joué par tous les coauteurs
+ % Contribution(s) personnelle(s) à l'article et rôle joué par tous les coauteurs
  %
  % Nécessaire seulement lorsque vous n'êtes pas seul·e auteur·e.
- % Les contributions peuvent apparaître ailleur dans la thèse.
+ % Les contributions peuvent apparaître ailleurs dans la thèse.
  % Si \contributions est laissé vide (p.ex. si vous effacez
  % celui ci-bas), aucune contributions ne seront générées sur
  % la page titre de l'article.
@@ -32,15 +33,16 @@
 \contributions%[Mes contributions et le rôle des coauteurs]
 {
     \begin{itemize}
-        \item Calcul de telle chose;
-        \item Vérification de telle équation;
-        \item Idée pour telle définition;
-        \item Démonstration de tel théorème.
+        \item Developed and performed the analyses;
+        \item Wrote the first version of the manuscript;
     \end{itemize}
 
-    Le coauteur1 a suggéré telle chose.
-
-    Le coauteur2 a fait telle calcul.\\[1cm]
+    Timothée Poisot developed a preliminary version of the analyses. 
+    
+    Pierre Legendre and Timothée Poisot provided guidance on the analyses and 
+    interpretation of the results and revised the manuscript.
+    
+    All authors read and approved the manuscript.\\[1cm]
 }
 %% Les contributions apparaîtrons après
 %% \maketitle. Selon les goûts, il est
@@ -55,13 +57,16 @@
 
 %%% INFORMATIONS POUR LA PAGE TITRE
  % Premier auteur·e et adresse
-\auteur{Hima Ginère}
-\adresse{1252i rue complexe\\ Université du plan complexe}
- % Deuxième auteur·e et adresse (si différente de la première)
-%%\auteur{Hana Lietick}
+\auteur{Gabriel Dansereau}
+% Deuxième auteur·e et adresse (si différente de la première)
+\auteur{Pierre Legendre}
 %%\adresse{4242 rue imaginaire\\ Universität von der gau\ss sche Zahlenebene}
 %%
 %% et ainsi de suite pour les autres auteurs
+\auteur{Timothée Poisot}
+\adresse{Département de sciences biologiques, Université de Montréal\\
+  1375 avenue Thérèse-Lavoie-Roux, Montréal, QC, Canada H2V 0B3}
+% \adresse{1205 Dr. Penfield Avenue, Montréal, QC, Canada, H3A 1B1 \\ Québec Centre for Biodiversity Science}
 
 \maketitle
 
@@ -112,7 +117,7 @@
 % \bibliographystyle{plainnat-fr}
 % \bibliographystyle{apalike-fr}
 % \bibliographystyle{apacite}
-\printbibliography
+% \printbibliography
 %%\bibliographystyle{<style>} % autre
 % \sectionbibliography{references.bib} %Donner le nom du .bib
 
