@@ -82,4 +82,8 @@ Our results show that SDM models provide uniqueness predictions similar to the o
 
 This study shows how ecological uniqueness can be measured on broad continuous map extents when portions of the maps contain few or no observational data.. First, the negative relationship often observed between species richness and local contributions to beta diversity (LCBD) can take different forms depending on the richness profile of the regions on which it is measured. Therefore, species-rich and species-poor regions may display different ways to be unique. Second, the negative relationship is not constant when varying the spatial study extent and may be less clearly defined at broad scales when contrasting regional relationships are present. Finally, species distribution models (SDMs) offer a promising way to generate uniqueness predictions on broad and continuous scales that match observation data while providing new information for poorly or unsampled locations.
 
+# Acknowledgments
+
+We acknowledge that this study was conducted on land within the traditional unceded territory of the Saint Lawrence Iroquoian, Anishinabewaki, Mohawk, Huron-Wendat, and Omàmiwininiwak nations. We have received financial support from the Fonds de recherche du Québec - Nature et technologie (FRQNT) and the Computational Biodiversity Science and Services (BIOS²) NSERC CREATE training program.
+
 # References
