@@ -3,13 +3,13 @@
 # You want latexmk to *always* run, because make does not have all the info.
 # Also, include non-file targets in .PHONY so they are run regardless of any
 # file of the given name existing.
-.PHONY: thesis.pdf all clean thesis
+.PHONY: thesis.pdf all clean thesis rm figures
 
 # The first rule in a Makefile is the one executed by default ("make"). It
 # should always be the "all" rule, so that "make" and "make all" are identical.
 
-all: thesis
-thesis: thesis.pdf
+all: thesis figures
+thesis: thesis.pdf figures
 md2tex: assets/_article1.tex assets/_introduction.tex
 
 # CUSTOM BUILD RULES
@@ -32,6 +32,34 @@ assets/_article1.tex: article1.md
 assets/_introduction.tex: introduction.md
 	pandoc --biblatex --filter pandoc-crossref -o assets/_introduction.tex introduction.md
 
+# FETCH FIGURES 
+FIGFILES=combined-maps.png subareas-combined.png subareas-medians.png subareas-3scales.png comparison-richness.png comparison-lcbd.png residuals_richness-negbinomial.png residuals_lcbd-betareg.png rare-species_ascending_plots.png
+FIGPATHS=$(patsubst %.png, figures/%.png, $(FIGFILES))
+BARTPATH=../betadiversity-hotspots/fig/bart
+
+figures: $(FIGPATHS)
+	
+figures/subareas-combined.png: $(BARTPATH)/05-1_bart_subareas_combined.png
+	cp $< $@
+	
+figures/subareas-medians.png: $(BARTPATH)/05-4_bart_subareas_medians.png
+	cp $< $@
+	
+figures/subareas-3scales.png: $(BARTPATH)/05-2_bart_subareas_3scales.png
+	cp $< $@
+
+figures/combined-maps.png: $(BARTPATH)/07_bart_combined-maps.png
+	cp $< $@
+
+figures/comparison-%.png: $(BARTPATH)/07_bart_comparison-%.png
+	cp $< $@
+
+figures/residuals_%.png: $(BARTPATH)/07_bart_residuals_%.png
+	cp $< $@
+
+figures/rare-species_%.png: $(BARTPATH)/08_bart_rare-species_%.png
+	cp $< $@
+
 # MAIN LATEXMK RULE
 # -----------------------------------------------------------------------------
 # -pdf tells latexmk to generate PDF directly (instead of DVI).
@@ -40,7 +68,7 @@ assets/_introduction.tex: introduction.md
 # -interaction=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
-thesis.pdf: thesis.tex introduction.tex article1.tex references.bib assets/_article1.tex assets/_introduction.tex 
+thesis.pdf: thesis.tex introduction.tex article1.tex references.bib assets/_article1.tex assets/_introduction.tex figures
 	latexmk -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 clean:
@@ -54,3 +82,4 @@ rm:
 	@rm -f *.run.xml
 	rm thesis.pdf
 	rm assets/_article1.tex
+	rm figures/*
