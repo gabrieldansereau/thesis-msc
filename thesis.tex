@@ -132,7 +132,16 @@
 \usepackage{amssymb,subfigure,icomma}
 % \usepackage{graphicx}
 \usepackage[export]{adjustbox}
-\setkeys{Gin}{width=1.2\textwidth}
+\usepackage{etoolbox}
+% From https://tex.stackexchange.com/questions/439918/set-default-value-for-max-width-of-includegraphics
+\expandafter\patchcmd\csname Gin@ii\endcsname
+  {\setkeys {Gin}{#1}}
+  {%
+    \setkeys {Gin}
+      {width=1.2\textwidth,center,#1}%
+  }
+  {}{}
+% \setkeys{Gin}{width=1.2\textwidth}
 %% icomma       permet d'écrire les nombres décimaux en
 %%                  français (p.ex. 1,23 plutôt que 1.23)
 %% subfigure    simplifie l'inclusion de figures côtes-à-côtes
