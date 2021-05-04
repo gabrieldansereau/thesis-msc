@@ -69,7 +69,7 @@ figures/rare-species_%.png: $(BARTPATH)/08_bart_rare-species_%.png
 # missing file reference and interactively asking you for an alternative.
 
 thesis.pdf: thesis.tex introduction.tex article1.tex references.bib assets/_article1.tex assets/_introduction.tex figures
-	latexmk -f -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
+	latexmk -f --quiet -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 clean:
 	@latexmk -c
