@@ -56,9 +56,13 @@ The species distribution models generated richness and uniqueness results that m
 
 ![Comparison between observed and predicted uniqueness. LCBD values ranged between 1.450e-5 and 5.910e-5 for observation data and between 1.117e-5 and 5.132e-5 for SDM data. The difference values ranged between -4.060e-5 and 3.297e-5.](figures/comparison-lcbd.png){#fig:comparison-lcbd}
 
+![Combined diff plot.](figures/comparison-combined.png){#fig:comparison-combined}
+
 ![Residuals from the Poisson regression of observed and predicted richness. The deviance residual values ranged between -3.591 and 4.654.](figures/residuals_richness-negbinomial.png){#fig:residuals-richness}
 
 ![Residuals from the Beta regression between observed and predicted uniqueness. The deviance residual values ranged between -4.866 and 2.799.](figures/residuals_lcbd-betareg.png){#fig:residuals-lcbd}
+
+![Combined res plot.](figures/residuals_combined.png){#fig:residuals-combined}
 
 ## Uniqueness displays regional variation as two distinct profiles
 

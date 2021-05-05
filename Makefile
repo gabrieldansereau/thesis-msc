@@ -33,7 +33,7 @@ assets/_introduction.tex: introduction.md
 	pandoc --biblatex --filter pandoc-crossref -o assets/_introduction.tex introduction.md
 
 # FETCH FIGURES 
-FIGFILES=combined-maps.png subareas-combined.png subareas-medians.png subareas-3scales.png comparison-richness.png comparison-lcbd.png residuals_richness-negbinomial.png residuals_lcbd-betareg.png rare-species_ascending_plots.png
+FIGFILES=combined-maps.png subareas-combined.png subareas-medians.png subareas-3scales.png comparison-richness.png comparison-lcbd.png comparison-combined.png residuals_richness-negbinomial.png residuals_lcbd-betareg.png residuals_combined.png rare-species_ascending_plots.png
 FIGPATHS=$(patsubst %.png, figures/%.png, $(FIGFILES))
 BARTPATH=../betadiversity-hotspots/fig/bart
 
