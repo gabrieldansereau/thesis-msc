@@ -52,17 +52,9 @@ The species distribution models generated richness and uniqueness results that m
 
 ![Comparison of species richness and LCBD scores from observed and predicted warbler occurrences in North America. Values were calculated for sites representing ten arc-minutes pixels.  We measured species richness after converting the occurrence data from eBird (a) and the SDM predictions from our single-species BART models (b) to a presence-absence format per species. We applied the Hellinger transformation to the presence-absence data, then calculated the LCBD values from the variance of the community matrices. We scaled the LCBD values from the occurrence data (c) and SDM predictions (d) to their respective maximal value. LCBD values ranged between 1.444e-5 and 5.860e-5 for observation data and between 5.788e-6 and 1.706e-5 for SDM data. The total beta diversity was 0.608 for the observation data and 0.775 for the SDM data. Areas in light grey (not on the colour scale) represent mainland sites with environmental data but without any warbler species present.](figures/combined-maps.png){#fig:maps}
 
-![Comparison between observed and predicted richness. The difference values ranged between -38 and 45.](figures/comparison-richness.png){#fig:comparison-richness}
+![Comparison between observed and predicted estimates of species richness (a, b) and ecological uniqueness (c, d). The difference values represent the estimate from the predicted data set minus the estimate from the observed data set. The difference values for richness ranged between -38 and 45 (a, b). LCBD values were recalculated for the same set of sites with observations in both data sets. Recalculated LCBD ranged between 1.450e-5 and 5.910e-5 for observation data and between 1.117e-5 and 5.132e-5 for SDM data. The difference values for LCBD scores ranged between -4.060e-5 and 3.297e-5 (c, d)](figures/comparison-combined.png){#fig:comparison-combined}
 
-![Comparison between observed and predicted uniqueness. LCBD values ranged between 1.450e-5 and 5.910e-5 for observation data and between 1.117e-5 and 5.132e-5 for SDM data. The difference values ranged between -4.060e-5 and 3.297e-5.](figures/comparison-lcbd.png){#fig:comparison-lcbd}
-
-![Combined diff plot.](figures/comparison-combined.png){#fig:comparison-combined}
-
-![Residuals from the Poisson regression of observed and predicted richness. The deviance residual values ranged between -3.591 and 4.654.](figures/residuals_richness-negbinomial.png){#fig:residuals-richness}
-
-![Residuals from the Beta regression between observed and predicted uniqueness. The deviance residual values ranged between -4.866 and 2.799.](figures/residuals_lcbd-betareg.png){#fig:residuals-lcbd}
-
-![Combined res plot.](figures/residuals_combined.png){#fig:residuals-combined}
+![Comparison of the regression residuals between the observed and predicted estimates of species richness (a, b) and ecological uniqueness (c, d). The estimate from the predicted data set was used as the dependent variable and the estimate from the observed data set as the independent variable. A Poisson regression was used for species richness and a Beta regression was used for uniqueness. The deviance residuals for richness ranged between -3.591 and 4.654 (a, b). LCBD values were recalculated for the same set of sites with observations in both data sets. The deviance residuals for LCBD scores ranged between -4.866 and 2.799.](figures/residuals_combined.png){#fig:residuals-combined}
 
 ## Uniqueness displays regional variation as two distinct profiles
 
