@@ -71,3 +71,15 @@ Puisque la mesure des LCBD n'a pas encore été utilisée à la fois à grande �
 Cependant, deux enjeux persistent quant à l'utilité de la mesure en conservation et pour la gestion des aires protégées, de même qu'en lien avec les déterminants d'une forte unicité écologique. 
 
 Plusieurs études ont cherché à comprendre les déterminants d'une forte mesure d'unicité écologique telle qu'évaluée par le mesure des LCBD. Or, ceux-ci ont peu été étudiés à grande échelle spatiale et sur un très grand nombre de sites.
+
+# Article
+
+## Intro
+
+Community-level analyses can be applied to the resulting community prediction, but this has been lacking for community measures other than species richness [@Ferrier2006SpaMod]. 
+
+These alternative methods all have different strengths, but even S-SDM, in a sense the most simple and less community-specific method, has been shown to provide reliable community predictions [@Norberg2019ComEva; @Zurell2020TesSpe]. This is important, as in the context of large-scale studies with a high number of sites and species, reducing the model complexity with a simpler yet efficient model such as an S-SDM can reduce the number of computations in an important way. 
+
+By comparison, S-SDMs may be a relevant for first step to establish some baselines for ecological uniqueness and LCBD indices, as these have rarely been used in predictive frameworks, and doing so would already raise important issues
+
+Given that few studies have used LCBD indices and ecological uniqueness within predictive frameworks, applying them on S-SDMs might prove a valid first step to establish some baselines.
