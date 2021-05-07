@@ -10,7 +10,7 @@
 
 all: thesis figures
 thesis: thesis.pdf figures
-md2tex: assets/_article1.tex assets/_introduction.tex assets/_conclusion.tex
+md2tex: assets/_article1.tex assets/_introduction.tex assets/_conclusion.tex assets/_appendix_joss.tex
 
 # CUSTOM BUILD RULES
 # -----------------------------------------------------------------------------
