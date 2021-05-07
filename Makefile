@@ -10,7 +10,7 @@
 
 all: thesis figures
 thesis: thesis.pdf figures
-md2tex: assets/_article1.tex assets/_introduction.tex
+md2tex: assets/_article1.tex assets/_introduction.tex assets/_conclusion.tex
 
 # CUSTOM BUILD RULES
 # -----------------------------------------------------------------------------
@@ -25,12 +25,17 @@ md2tex: assets/_article1.tex assets/_introduction.tex
 # %.tex: %.dat
 #         ./dat2tex $< > $@
 
+assets/_%.tex: %.md
+	pandoc --biblatex --filter pandoc-crossref -o $@ $<
 
-assets/_article1.tex: article1.md
-	pandoc --biblatex --filter pandoc-crossref -o assets/_article1.tex article1.md
+# assets/_article1.tex: article1.md
+# 	pandoc --biblatex --filter pandoc-crossref -o assets/_article1.tex article1.md
 
-assets/_introduction.tex: introduction.md
-	pandoc --biblatex --filter pandoc-crossref -o assets/_introduction.tex introduction.md
+# assets/_introduction.tex: introduction.md
+# 	pandoc --biblatex --filter pandoc-crossref -o assets/_introduction.tex introduction.md
+
+# assets/_conclusion.tex: conclusion.md
+# 	pandoc --biblatex --filter pandoc-crossref -o assets/_conclusion.tex conclusions.md
 
 # FETCH FIGURES 
 FIGFILES=combined-maps.png subareas-combined.png subareas-medians.png subareas-3scales.png comparison-combined.png residuals-combined.png rare-species_ascending_plots.png
@@ -75,5 +80,5 @@ rm:
 	@rm -f *.bbl
 	@rm -f *.run.xml
 	rm thesis.pdf
-	rm assets/_article1.tex
+	rm assets/*.tex
 	rm figures/*
