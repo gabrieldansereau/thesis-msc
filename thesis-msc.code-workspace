@@ -29,5 +29,17 @@
         "*.run.xml": true,
         "*.toc": true,
 		  },
+      "[latex]": {
+        "editor.formatOnPaste": false,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.wordWrapColumn": 95,
+        "editor.wordWrap": "wordWrapColumn",
+        "rewrap.autoWrap.enabled": false,
+        // "editor.rulers": [70],
+        "editor.rulers": [ ],
+        "editor.fontFamily": "fira sans",
+        // "editor.fontLigatures": true,
+        "editor.fontSize": 16,
+      }
 	}
 }
