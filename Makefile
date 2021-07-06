@@ -38,25 +38,31 @@ assets/_%.tex: %.md
 # 	pandoc --biblatex --filter pandoc-crossref -o assets/_conclusion.tex conclusions.md
 
 # FETCH FIGURES 
-FIGFILES=combined-maps.png subareas-combined.png subareas-medians.png subareas-3scales.png comparison-combined.png residuals-combined.png rare-species_ascending_plots.png
+FIGFILES=comparison-combined.png subareas-combined.png subareas-medians.png subareas-extents.png comparison-difference.png comparison-residuals.png rare-species.png
 FIGPATHS=$(patsubst %.png, figures/%.png, $(FIGFILES))
 BARTPATH=../betadiversity-hotspots/fig/bart
 
 figures: $(FIGPATHS)
 	
-figures/subareas-combined.png: $(BARTPATH)/05-1_bart_subareas_combined.png
+figures/subareas-combined.png: $(BARTPATH)/05_bart_subareas.png
 	cp $< $@
 	
-figures/subareas-medians.png: $(BARTPATH)/05-4_bart_subareas_medians.png
+figures/subareas-medians.png: $(BARTPATH)/05_bart_medians.png
 	cp $< $@
 	
-figures/subareas-3scales.png: $(BARTPATH)/05-2_bart_subareas_3scales.png
+figures/subareas-extents.png: $(BARTPATH)/05_bart_extents.png
 	cp $< $@
 
-figures/%.png: $(BARTPATH)/07_bart_%.png
+figures/rare-species.png: $(BARTPATH)/06_bart_rare-species.png
 	cp $< $@
 
-figures/rare-species_%.png: $(BARTPATH)/08_bart_rare-species_%.png
+figures/comparison-combined.png: $(BARTPATH)/09_bart_combined.png
+	cp $< $@
+
+figures/comparison-difference.png: $(BARTPATH)/09_bart_difference.png
+	cp $< $@
+
+figures/comparison-residuals.png: $(BARTPATH)/09_bart_residuals.png
 	cp $< $@
 
 # MAIN LATEXMK RULE
