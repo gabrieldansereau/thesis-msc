@@ -105,9 +105,9 @@ temperature = worldclim(1)
 
 ```
 SimpleSDMLayers.SimpleSDMPredictor{Float32}(Union{Nothing, Float32}[-31.017
-105f0 -31.62153f0 … -32.81253f0 -31.620333f0; -30.391916f0 -31.63478f0 … -3
-2.81005f0 -30.995281f0; … ; nothing nothing … nothing nothing; nothing noth
-ing … nothing nothing], -180.0, 180.0, -90.0, 90.0)
+105f0 -31.62153f0 … -32.81253f0 -31.620333f0; -30.391916f0 -31.63478f0 … 
+-32.81005f0 -30.995281f0; … ; nothing nothing … nothing nothing; nothing 
+nothing … nothing nothing], -180.0, 180.0, -90.0, 90.0)
 ```
 
 
@@ -210,8 +210,7 @@ layers, which can then be plotted as shown previously.
 ```
 using Statistics
 # Clip to Europe
-temperature_europe = temperature[left = -11.2, right = 30.6, 
-                                 bottom = 29.1, top = 71.0]
+temperature_europe = temperature[left = -11.2, right = 30.6, bottom = 29.1, top = 71.0]
 # Coarsen resolution
 temperature_coarse = coarsen(temperature_europe, Statistics.mean, (4, 4))
 # Sliding window averaging
