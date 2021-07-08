@@ -26,7 +26,7 @@ md2tex: assets/_article1.tex assets/_introduction.tex assets/_conclusion.tex ass
 #         ./dat2tex $< > $@
 
 assets/_%.tex: %.md
-	pandoc --biblatex --filter pandoc-crossref --listings -H listings-setup.tex -o $@ $< --pdf-engine="xelatex"
+	pandoc --biblatex --filter pandoc-crossref -o $@ $<
 
 # assets/_article1.tex: article1.md
 # 	pandoc --biblatex --filter pandoc-crossref -o assets/_article1.tex article1.md
