@@ -95,7 +95,7 @@ call.
 By default, this will return a layer with the values for the whole world if no
 bounding coordinates are specified.
 
-```
+```julia
 # Load package
 using SimpleSDMLayers
 
@@ -116,7 +116,7 @@ nothing … nothing nothing], -180.0, 180.0, -90.0, 90.0)
 
 The raster values can be displayed by calling the `grid` field.
 
-```
+```julia
 # Display data grid
 temperature.grid
 ```
@@ -152,7 +152,7 @@ temperature.grid
 `SimpleSDMLayers.jl` then makes it very simple to plot and visualize the layer
 as a map using `Plots.jl` (\autoref{fig:temp}).
 
-```
+```julia
 using Plots
 plot(temperature)
 ```
@@ -207,7 +207,7 @@ each site based on a certain radius.
 Each of these operations can be performed in a single command and returns new
 layers, which can then be plotted as shown previously.
 
-```
+```julia
 using Statistics
 # Clip to Europe
 temperature_europe = temperature[left = -11.2, right = 30.6, bottom = 29.1, top = 71.0]
@@ -230,7 +230,7 @@ The species represented in this example is the belted kingfisher
 database. Note that the element returned here uses the `GBIFRecords` format,
 which contains the metadata associated to each GBIF occurrence.
 
-```
+```julia
 using GBIF
 kingfisher = GBIF.taxon("Megaceryle alcyon", strict=true)
 kf_occurrences = occurrences(kingfisher)
@@ -259,7 +259,7 @@ The occurrences' coordinates can also be extracted with `longitudes()` and
 Using these functions, we can easily create a map of the occurrences by
 overlaying them on top of the clipped environmental layer (\autoref{fig:gbif}).
 
-```
+```julia
 # Clip layer to occurrences
 temperature_clip = clip(temperature, kf_occurrences)
 
