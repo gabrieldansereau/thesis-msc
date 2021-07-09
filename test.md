@@ -1,11 +1,3 @@
----
-title: Test
-author: Author Name
-header-includes:
-    - \usepackage[]{minted}
-    - \setminted{breaklines=true}
----
-
 <!-- pandoc -F pandoc-minted -s test.md -o test.tex; pdflatex --shell-escape test.tex -->
 
 # Summary

@@ -26,7 +26,10 @@ md2tex: assets/_article1.tex assets/_introduction.tex assets/_conclusion.tex ass
 #         ./dat2tex $< > $@
 
 assets/_%.tex: %.md
-	pandoc --biblatex --filter pandoc-crossref --listings -o $@ $<
+	pandoc --biblatex --filter pandoc-crossref -o $@ $<
+
+assets/_appendix_joss.tex: appendix_joss.md
+	pandoc --biblatex --filter pandoc-crossref -F pandoc-minted -s $< -o $@
 
 # assets/_article1.tex: article1.md
 # 	pandoc --biblatex --filter pandoc-crossref -o assets/_article1.tex article1.md
@@ -74,7 +77,7 @@ figures/comparison-residuals.png: $(BARTPATH)/09_bart_residuals.png
 # missing file reference and interactively asking you for an alternative.
 
 thesis.pdf: thesis.tex introduction.tex article1.tex appendix_joss.tex references.bib assets figures
-	latexmk -f --quiet -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
+	latexmk -f --quiet -pdf -pdflatex="pdflatex -interaction=nonstopmode --shell-escape" -use-make thesis.tex
 
 clean:
 	@latexmk -c
