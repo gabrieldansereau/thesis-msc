@@ -73,7 +73,7 @@ figures/comparison-residuals.png: $(BARTPATH)/09_bart_residuals.png
 # -interaction=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
-thesis.pdf: thesis.tex 02_article1.tex references.bib md2tex figures template/*
+thesis.pdf: thesis.tex references.bib md2tex figures template/*
 	latexmk -f --quiet -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 clean:
