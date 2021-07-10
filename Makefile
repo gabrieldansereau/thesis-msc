@@ -10,7 +10,7 @@
 
 all: thesis figures
 thesis: thesis.pdf figures
-md2tex: assets/_article1.tex assets/_introduction.tex assets/_conclusion.tex assets/_appendix_joss.tex
+md2tex: assets/_introduction.tex assets/_article1.tex assets/_conclusion.tex assets/_appendix_joss.tex
 
 # CUSTOM BUILD RULES
 # -----------------------------------------------------------------------------
@@ -25,7 +25,7 @@ md2tex: assets/_article1.tex assets/_introduction.tex assets/_conclusion.tex ass
 # %.tex: %.dat
 #         ./dat2tex $< > $@
 
-assets/_%.tex: %.md
+assets/_%.tex: ??_%.md
 	pandoc --biblatex --filter pandoc-crossref --listings -o $@ $<
 
 # assets/_article1.tex: article1.md
@@ -73,7 +73,7 @@ figures/comparison-residuals.png: $(BARTPATH)/09_bart_residuals.png
 # -interaction=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
-thesis.pdf: thesis.tex article1.tex references.bib assets figures
+thesis.pdf: thesis.tex 02_article1.tex references.bib md2tex figures
 	latexmk -f --quiet -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 clean:
