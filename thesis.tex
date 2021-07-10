@@ -567,13 +567,36 @@ Merci finalement à mes parents pour leur éternel soutien. Merci d’être pré
 \appendix
  % Les annexes se font comme les chapitres. Le fichier
  % commence par \francais ou \anglais et ensuite
- % \chapter{..}. Le reste est parreil à un chapitre normal.
+ % \chapter{..}. Le reste est pareil à un chapitre normal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%   A N N E X E 1   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{appendix_joss}
+
+\setcounter{secnumdepth}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{figure}{0}
+
+ \anglais 
+
+ \revue[This article was published in ]{Journal of Open Source Software}
+ \article{SimpleSDMLayers.jl and GBIF.jl: A Framework for Species Distribution Modelling in Julia}
+
+\contributions[]
+{
+    GD and TP developed the software. GD wrote the manuscript.
+}
+
+\auteur{Gabriel Dansereau}
+\auteur{Timothée Poisot}
+\adresse{Département de sciences biologiques, Université de Montréal\\
+  1375 avenue Thérèse-Lavoie-Roux, Montréal, QC, Canada H2V 0B3}
+
+\maketitle
+
+\input{assets/_appendix_joss.tex}
+
 %%
 %% etc.
 
