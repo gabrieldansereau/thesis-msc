@@ -14,28 +14,16 @@ md2tex: assets/_introduction.tex assets/_article1.tex assets/_conclusion.tex ass
 
 # CUSTOM BUILD RULES
 # -----------------------------------------------------------------------------
-# In case you didn't know, '$@' is a variable holding the name of the target,
-# and '$<' is a variable holding the (first) dependency of a rule.
-# "raw2tex" and "dat2tex" are just placeholders for whatever custom steps
-# you might have.
+# - '$@' is a variable holding the name of the target
+# - '$<' is a variable holding the (first) dependency of a rule.
+# - '%' is a placeholder for matching patterns (for targets and dependencies)
 
-# %.tex: %.raw
-#         ./raw2tex $< > $@
+# CONVERT FROM MARKDOWN TO LATEX
+assets/_%.tex: 0[1-3]_%.md
+	pandoc --biblatex --filter pandoc-crossref -o $@ $<
 
-# %.tex: %.dat
-#         ./dat2tex $< > $@
-
-assets/_%.tex: ??_%.md
+assets/_appendix_joss.tex: ??_appendix_joss.md
 	pandoc --biblatex --filter pandoc-crossref --listings -o $@ $<
-
-# assets/_article1.tex: article1.md
-# 	pandoc --biblatex --filter pandoc-crossref -o assets/_article1.tex article1.md
-
-# assets/_introduction.tex: introduction.md
-# 	pandoc --biblatex --filter pandoc-crossref -o assets/_introduction.tex introduction.md
-
-# assets/_conclusion.tex: conclusion.md
-# 	pandoc --biblatex --filter pandoc-crossref -o assets/_conclusion.tex conclusions.md
 
 # FETCH FIGURES 
 FIGFILES=comparison-combined.png subareas-combined.png subareas-medians.png subareas-extents.png comparison-difference.png comparison-residuals.png rare-species.png
