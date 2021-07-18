@@ -110,6 +110,12 @@ L'utilisation des LCBD en conservation s'inscrit dans une approche plus généra
 
 (Mentionner ce que l'autocorrélation représente. Indiquer en quoi l'autocorrélation est un problème potentiel dans les estimations ~~et comment on pourrait distinguer une autocorrélation réelle d’un artéfact du modèle.~~)
 
+L’autocorrélation spatiale représente une dépendance entre deux variables en raison de leur proximité dans l’espace. Par exemple, l’autocorrélation peut poser problème lorsque l’on cherche à évaluer l’association ou la corrélation entre deux variables. Si celles-ci sont autocorrélées, l’association obtenue par différents tests statistiques pourrait être en partie reliée à la proximité spatiale entre les sites où les variables sont mesurées, et non aux variables elle-mêmes. Si l’autocorrélation n’est pas prise en compte, les résultats des tests statistiques pourraient être trompeurs.
+
+Différentes méthodes permettent de prendre en compte l’autocorrélation spatiale. Les corrélogrammes sont l’une des méthodes les plus utilisées pour évaluer et quantifier l’autocorrélation. Ceux-ci permettent d’évaluer le lien entre deux variables en fonction de la distance entre les sites. Ce faisant, ils nécessitent cependant de calculer la distance géographique entre toutes les paires de sites, ce qui peut les rendre très exigeantes dans le cas où un grand nombre de sites sont évalués, par exemple à une échelle spatiale étendue.
+
+Une autre possibilité est de corriger les tests statistiques pour tenir compte de l’autocorrélation sans évaluer celle-ci directement. Le test de Clifford et al. (1989) en est un bon exemple en permettant d’évaluer la corrélation entre deux variables entre corrigeant pour l’association spatiale entre celles-ci. Ce test réduit le nombre de degrés de liberté effectifs en se basant sur le principe que l’autocorrélation réduit le nombre de valeurs indépendantes dans l’échantillon. La corrélation entre les variables d’intérêt est ensuite évaluée en fonction du nombre de degrés de liberté réduit. 
+
 # Objectifs de l'étude
 
 Suivant les éléments présentés dans les différentes sections de cette introduction, j'ai donc réalisé une étude où j'ai cherché à évaluer comment l'unicité écologique peut être évaluée à grande échelle spatiale. Mes objectifs étaient a) de déterminer si les modèles de répartition d'espèces permettent une évaluation juste de l'unicité écologique sur des échelles spatiales étendues et b) d'étudier l’effet des changements d’échelle sur la quantification de la diversité beta.
