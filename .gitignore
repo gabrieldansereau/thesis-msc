@@ -12,3 +12,4 @@
 *.toc
 assets/
 thesis.pdf
+.vscode
