@@ -150,7 +150,7 @@ temperature.grid
 
 
 `SimpleSDMLayers.jl` then makes it very simple to plot and visualize the layer
-as a map using `Plots.jl` (\autoref{fig:temp}).
+as a map using `Plots.jl` ([@Fig:temp]).
 
 ```julia
 using Plots
@@ -257,7 +257,7 @@ call using the `clip()` function.
 The occurrences' coordinates can also be extracted with `longitudes()` and
 `latitudes()`.
 Using these functions, we can easily create a map of the occurrences by
-overlaying them on top of the clipped environmental layer (\autoref{fig:gbif}).
+overlaying them on top of the clipped environmental layer ([@Fig:gbif]).
 
 ```julia
 # Clip layer to occurrences
