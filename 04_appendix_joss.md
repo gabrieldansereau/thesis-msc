@@ -196,7 +196,7 @@ plot(temperature)
 
 # Examples
 
-### Spatial operations
+## Spatial operations
 
 To illustrate a few of the spatial operations supported by `SimpleSDMLayers.jl`,
 the following code reuses the previous `temperature` layer, and shows how it is
@@ -219,7 +219,7 @@ temperature_slided = slidingwindow(temperature_europe, Statistics.mean, 100.0)
 
 
 
-### GBIF integration
+## GBIF integration
 
 The following example shows how the integration between `SimpleSDMLayers.jl` and
 `GBIF.jl` allows to easily map the occurrences of any species in GBIF.
