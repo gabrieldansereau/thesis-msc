@@ -10,32 +10,20 @@
 
 all: thesis figures
 thesis: thesis.pdf figures
-md2tex: assets/_article1.tex assets/_introduction.tex assets/_conclusion.tex assets/_appendix_joss.tex
+md2tex: assets/_introduction.tex assets/_article1.tex assets/_conclusion.tex assets/_appendix_joss.tex
 
 # CUSTOM BUILD RULES
 # -----------------------------------------------------------------------------
-# In case you didn't know, '$@' is a variable holding the name of the target,
-# and '$<' is a variable holding the (first) dependency of a rule.
-# "raw2tex" and "dat2tex" are just placeholders for whatever custom steps
-# you might have.
+# - '$@' is a variable holding the name of the target
+# - '$<' is a variable holding the (first) dependency of a rule.
+# - '%' is a placeholder for matching patterns (for targets and dependencies)
 
-# %.tex: %.raw
-#         ./raw2tex $< > $@
-
-# %.tex: %.dat
-#         ./dat2tex $< > $@
-
-assets/_%.tex: %.md
+# CONVERT FROM MARKDOWN TO LATEX
+assets/_%.tex: 0[1-3]_%.md
 	pandoc --biblatex --filter pandoc-crossref -o $@ $<
 
-# assets/_article1.tex: article1.md
-# 	pandoc --biblatex --filter pandoc-crossref -o assets/_article1.tex article1.md
-
-# assets/_introduction.tex: introduction.md
-# 	pandoc --biblatex --filter pandoc-crossref -o assets/_introduction.tex introduction.md
-
-# assets/_conclusion.tex: conclusion.md
-# 	pandoc --biblatex --filter pandoc-crossref -o assets/_conclusion.tex conclusions.md
+assets/_appendix_joss.tex: ??_appendix_joss.md
+	pandoc --biblatex --filter pandoc-crossref --listings -o $@ $<
 
 # FETCH FIGURES 
 FIGFILES=comparison-combined.png subareas-combined.png subareas-medians.png subareas-extents.png comparison-difference.png comparison-residuals.png rare-species.png
@@ -73,7 +61,7 @@ figures/comparison-residuals.png: $(BARTPATH)/09_bart_residuals.png
 # -interaction=nonstopmode keeps the pdflatex backend from stopping at a
 # missing file reference and interactively asking you for an alternative.
 
-thesis.pdf: thesis.tex introduction.tex article1.tex references.bib assets/*.tex figures
+thesis.pdf: thesis.tex references.bib md2tex figures template/*
 	latexmk -f --quiet -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make thesis.tex
 
 clean:

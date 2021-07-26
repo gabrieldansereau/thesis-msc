@@ -112,7 +112,7 @@
 \edef\dmscontentsnameen{Contents}
 
 \edef\revuemsgfr{Cet article a \noexpand\'et\noexpand\'e soumis dans }
-\edef\revuemsgen{This article will be submitted in }
+\edef\revuemsgen{This article will be submitted to }
 
 \edef\contribmsgfr{Les principales contributions de
   \noexpand\authors\ \noexpand\`a cet article sont pr\noexpand\'esent\noexpand\'ees.}
@@ -130,7 +130,7 @@
   \edef\refnameen{References}
 
   \edef\revuemsgfr{Cet article a \'et\'e soumis dans }
-  \edef\revuemsgen{This article will be submitted in }
+  \edef\revuemsgen{This article will be submitted to }
 
   \edef\contribmsgfr{Les principales contributions de
     \noexpand\authors\ \`a cet article sont pr\'esent\'ees.}

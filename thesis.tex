@@ -1,277 +1,9 @@
-%%
-%% This is file `gabaritTPA.tex',
-%% generated with the docstrip utility.
-%%
-%% The original source files were:
-%%
-%% dms.dtx  (with options: `TPA,gabarit')
-%% Example TeX file for the documentation
-%% of the jurabib package
-%% Copyright (C) 1999, 2000, 2001 Jens Berger
-%% See dms.ins  for the copyright details.
-%% 
-%%% ====================================================================
-%%%  @LaTeX-file{
-%%%     filename        = "dms.dtx",
-%%%     author    = "Nicolas Beauchemin, Damien Rioux-Lavoie, Victor Fardel, Jonathan Godin",
-%%%     copyright = "Copyright (C) 2000 , DMS
-%%%                  all rights reserved.  Copying of this file is
-%%%                  authorized only if either:
-%%%                  (1) you make absolutely no changes to your copy,
-%%%                  including name; OR
-%%%                  (2) if you do make changes, you first rename it
-%%%                  to some other name.",
-%%%     address   = "Département de Mathématiques et de Statistique",
-%%%     telephone = "514-343-6705",
-%%%     FAX       = "514-343-5700",
-%%%     email     = "aide@dms.umontreal.ca (Internet)",
-%%%     keywords  = "latex, amslatex, ams-latex, theorem",
-%%%     abstract  = " Ce fichier est un package conçu pour être
-%%%                  utilisé avec la version de LaTeX2e 1995/06/01. Il
-%%%                  est prévue pour la classe ``amsbook''. Il en
-%%%                  modifie le format des pages, l'entête des
-%%%                  sections, etc, afin d'être  conforme au modèle de
-%%%                  mémoire de maîtrise de l'Université de
-%%%                  Montréal. Finalement ce fichier est grandement
-%%%                  inspiré du fichier amsclass.dtx.",
-%%%     docstring = "The checksum field contains: CRC-16 checksum,
-%%%                  word count, line count, and character count, as
-%%%                  produced by Robert Solovay's checksum utility."}
-%%%  ====================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Préambule dans preamble.sty %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%% Pour voir les accents de ce fichier, assurez-vous que votre
-%% éditeur de texte lise le fichier en utf-8!
-
-%% La classe <dms> est construite au-dessus de <amsbook>, donc
-%% <amsmath>, <amsfonts> et <amsthm> sont automatiquement chargés.
-\documentclass[12pt,twoside,maitrise]{dms}
-\usepackage[utf8]{inputenc} %Obligatoires
-\usepackage[T1]{fontenc}    %
-% \usepackage{natbib}
-% \usepackage[natbibapa]{apacite}
-% \usepackage[american]{babel}
-
-%% <lmodern> incorpore les fontes en T1, pour
-%% faciliter le dépôt final. Ceci n'est pas la
-%% seule option :
-%%  1. Si cm-super est installé, vous pouvez enlever <lmodern>
-%%     (à ce moment, la police est un peu plus fidèle
-%%      au Computer Modern orginal);
-%%  2. Si vous avez une police préférée, par exemple,
-%%     <times> ou <euler> ou <mathpazo> (et bien d'autres),
-%%     alors vous pouvez remplacer <lmodern> ci-bas.
-%% Par contre, si vous faîtes face à un problème d'encapsulation
-%% lors dépôt final, il se peut que la solution soit d'utiliser <lmodern>.
-%% (Parfois le problème est au niveau de l'installation, donc
-%%  essayez de compiler sur un autre ordinateur sur lequel vous êtes
-%%  certain·e que l'installation est bonne.)
-% \usepackage{lmodern}
-\usepackage{times}
-% \usepackage{libertine}
-
-%% Il n'est pas nécessaire d'utiliser <babel>, car
-%% les commandes intégrées par la classe <dms>
-%% \francais et \anglais font le travail. Néanmoins,
-%% certains autres packages nécessitent <babel> (comme
-%% <natbib>), donc simplement enlever les % devant <babel>
-%% dans ce cas. Attention! Certains packages sont sensibles
-%% à l'ordre dans lequel ils sont chargés.
-\francais % or
-%%\anglais
-%%
-\usepackage[english,french]{babel}
-\usepackage{csquotes}
-\usepackage[style=apa, natbib=true, backend=biber]{biblatex}
-\DefineBibliographyExtras{french}{\restorecommand\mkbibnamefamily}
-
-\addbibresource{references.bib}
-
-\DefineBibliographyStrings{french}{ and = {et}, }
-\DefineBibliographyStrings{english}{ and = {\&}, }
-
-\DeclareDelimFormat*{finalnamedelim}{\addspace\bibstring{and}\space}
-\DeclareDelimFormat*{finalnamedelim:apa:family-given}{\addspace\bibstring{and}\space}
-
-% \DeclareDelimFormat[bib]{finalnamedelim}{%
-%   \ifthenelse{\value{listcount}>\maxprtauth}
-%     {}
-%     {\ifthenelse{\value{liststop}>2}
-%        {\finalandcomma\addspace\bibstring{and}\space}
-%        {\addspace\bibstring{and}\space}}}
-
-% \DeclareDelimFormat[bib]{finalnamedelim:apa:family-given}{%
-%   \ifthenelse{\value{listcount}>\maxprtauth}
-%     {}
-%     {\ifthenelse{\ifcurrentname{groupauthor}\AND%
-%                  \value{liststop}=2}
-%      {\addspace\bibstring{and}\space}
-%      {\finalandcomma\addspace\bibstring{and}\space}}}
-
- % ENGLISH OPTION
- % If you call \anglais here before the \begin{document},
- % all the chater's header will be in english, even if you
- % call \francais. To change this, use
- % \entetedynamique
-
-%% La commande \sloppy peut avoir des effets étranges sur les
-%% lignes de certains paragraphes.  Dans ce cas, essayez \fussy
-%% qui suppresse les effets de \sloppy.
-%% (\fussy est normalement le comportement par défaut.)
-%% On redéfinit \sloppy, pour tenter de réduire les comportements
-%% étranges. Le seul changement apporté à la version originale
-%% est la valeur de \tolerance.
-\def\sloppy{%
-  \tolerance 500%  %9999 dans LaTeX ordinaire, mauvaise idée.
-  \emergencystretch 3em%
-  \hfuzz .5pt
-  \vfuzz\hfuzz}
-\sloppy   %appel de \sloppy pour le document
-%%\fussy  %ou \fussy
-
-%% Packages utiles.
-\usepackage{amssymb,subfigure,icomma}
-% \usepackage{graphicx}
-\usepackage[export]{adjustbox}
-\usepackage{etoolbox}
-% From https://tex.stackexchange.com/questions/439918/set-default-value-for-max-width-of-includegraphics
-\expandafter\patchcmd\csname Gin@ii\endcsname
-  {\setkeys {Gin}{#1}}
-  {%
-    \setkeys {Gin}
-      {width=1.2\textwidth,center,#1}%
-  }
-  {}{}
-% \setkeys{Gin}{width=1.2\textwidth}
-%% icomma       permet d'écrire les nombres décimaux en
-%%                  français (p.ex. 1,23 plutôt que 1.23)
-%% subfigure    simplifie l'inclusion de figures côtes-à-côtes
-
-%% Packages parfois utiles.
-%%\usepackage{dsfont,mathrsfs,color,url,verbatim,booktabs}
-%% dsfont       symboles mathématiques \mathds
-%% mathrsfs     plus de symboles mathématiques \mathscr
-%% color        pour utiliser des couleurs (comparer avec <xcolor>)
-%% url          permet l'écriture d'url
-%% verbatim     pour écrire du code ou du texte tel quel
-%% booktabs     plus de macros pour faire les tableaux
-%%                  (voir documentation du package)
-
-%% pour que la largeur de la légende des figures soit = \textwidth
-\usepackage[labelfont=bf, width=\linewidth]{caption}
-
-%% les 3 lignes suivante servent à l'affichage de l'index
-%% dans le visionneur de pdf. <hyperref> et <bookmark>
-%% devraient être les dernier package a être chargé,
-%% donc chargez vos packages avant.
-\usepackage{hyperref}  % Ajoute les hyperlien
-\hypersetup{colorlinks=true,allcolors=black}
-\usepackage{hypcap}   % Corrige la position du lien pour les images
-\usepackage{bookmark} % Remédie à des petits problème
-                      % de <hyperref> (important qu'il
-                      % apparaisse APRÈS <hyperref>)
-
-  % Enlever les commentaires du prochaine \hypersetup et
-  % le remplir avec l'information pertinente.
-  % Ceci ajoute des « méta-données » au pdf.  C'est optionnel,
-  % mais recommandé. Vous pouvez voir ces méta-données en
-  % ouvrant un visionneur de pdf et en cherchant les propriétés
-  % du pdf. (Vous pouvez aussi tapez ' pdfinfo <nom-du-pdf> '
-  % dans un terminal.) Ces données sont utiles, par exemple,
-  % pour augmenter les chances qu'un algorithme de recherche
-  % trouve votre document sur Internet, une fois diffusé.
-\hypersetup{
- pdftitle = {Évaluation de l'unicité écologique à grande étendue spatiale à 
-            l'aide de modèles de répartition d'espèces},
- pdfauthor = {Gabriel Dansereau},
- pdfsubject = {Ex: beta diversity, ecological uniqueness, species distribution 
-               modelling, ecological communities, spatial scales},
- pdfkeywords = {Ex: beta diversity, community ecology, biogeography, 
-                species distribution modelling, spatial scales, ecological uniqueness}
-}
-
-%% Définition des environnements utiles pour un mémoire scientifique.
-%% La numérotation est laissée à la discrétion de l'auteur·e. L'exemple
-%% illustré ici produit « Définition x.y.z » à l'extérieur d'un article
-%%   x = no. chapitre
-%%   y = no. section
-%%   z = no. définition
-%% et « Définition x » à l'intérieur d'un article
-%%   x = no. définition
-%% Les numérotations des corollaires, définitions, etc.
-%% se font de façon successive.
-%%
-%% Les macros \<type>name sont telles qu'ils suivent
-%% la langue actuelle. (P.ex. si \francais est utilisé,
-%% alors \begin{theo} va faire un Théorème et si \anglais
-%% est utilisé, \begin{theorem} fera un Theorem.)
-%%
-  % Environnement à utiliser à l'extérieur des articles
-\newtheorem{cor}{\corollaryname}[section]
-\newtheorem{deff}[cor]{\definitionname}
-\newtheorem{ex}[cor]{\examplename}
-\newtheorem{lem}[cor]{\lemmaname}
-\newtheorem{prop}[cor]{Proposition}
-\newtheorem{rem}[cor]{\remarkname}
-\newtheorem{theo}[cor]{\theoremname}
-
-  % Environnement à utiliser à l'intérieur des articles
-\newtheorem{corA}{\corollaryname}
-\newtheorem{deffA}[corA]{\definitionname}
-\newtheorem{exA}  [corA]{\examplename}
-\newtheorem{lemA} [corA]{\lemmaname}
-\newtheorem{propA}[corA]{Proposition}
-\newtheorem{remA} [corA]{\remarkname}
-\newtheorem{theoA}[corA]{\theoremname}
-%% IMPORTANT : Il faut faire \setcounter{corA}{0}
-%% au début d'un article pour recommancer à compter à 1.
-%%
-%% NOTE : Il peut être commode de redéfinir \the<type> pour
-%% obtenir la numérotation désirée. Par exemple, pour
-%% que les corollaires soit numérotés #article.#section.#sous-section,
-%% on fait
-%% \renewcommand\thecorA{\thepart.\thesubsection.\arabic{corA}}
-
-%%%
-%%% Si vous préférez que les corollaires, définitions, théorèmes,
-%%% etc. soient numérotés séparément, utilisez plutôt un bloc de
-%%% commandes de la forme :
-%%%
-
-%%\newtheorem{cor}{\corollaryname}[section]
-%%\newtheorem{deff}{\definitionname}[section]
-%%\newtheorem{ex}{\examplename}[section]
-%%\newtheorem{lem}{\lemmaname}[section]
-%%\newtheorem{prop}{Proposition}[section]
-%%\newtheorem{rem}{\remarkname}[section]
-%%\newtheorem{theo}{\theoremname}[section]
-
-%%
-%% Numérotation des équations par section
-%% et des  tableaux et figures par chapitre.
-%% Ceci peut être modifié selon les préférences de l'utilisateur.
-\numberwithin{equation}{section}
-\numberwithin{table}{chapter}
-\numberwithin{figure}{chapter}
-
-%%
-%% Si on veut faire un index, il faut décommenter la ligne
-%% suivante. Ajouter des mots à l'index avec la commande \index{mot cle} au
-%% fur et à mesure dans le texte.  Compiler, puis taper la commande
-%% makeindex pour creer les indexs.  Après une nouvelle compilation,
-%% vous aurez votre index.
-%%
-
-%%\makeindex
-
-%% Il est obligatoire d'écrire à double interligne
-%% ou à interligne et demi. On peut soit utiliser
-%% le package <setspace> ou \baselinestretch.
-%% Le package est un peu plus propre, mais le choix
-%% reste à la discrétion de l'usager.
-\usepackage[doublespacing]{setspace}
-% \usepackage[onehalfspacing]{setspace}
- % ou
-%%\renewcommand{\baselinestretch}{1.5}
+\documentclass[12pt,twoside,maitrise]{template/dms}
+\usepackage{template/preamble}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -312,7 +44,7 @@
 
 \department{Département de sciences biologiques}
 
-\date{\today} %Date du DÉPÔT INITIAL (ou du 2e dépôt s'il y a corrections majeures)
+\date{7 mai 2021} %Date du DÉPÔT INITIAL (ou du 2e dépôt s'il y a corrections majeures)
 
 \sujet{sciences biologiques}
 %%\orientation{orientation}%Ce champ est optionnel
@@ -324,7 +56,7 @@
 %% \orientation{mathématiques de l'ingénieur} et
 %% \orientation{mathématiques appliquées}
 
-\president{Anne-Lise Routhier}
+\president{Anne-Lise Routier}
 
 \directeur{Timothée Poisot}
 
@@ -369,7 +101,7 @@
 
 \chapter*{Résumé}
 
-La diversité bêta est une mesure essentielle pour décrire l'organisation de la biodiversité dans l'espace. Le calcul des contributions locales à la diversité bêta (LCBD), en particulier, permet d'identifier des sites à forte unicité écologique et montrant une diversité exceptionnelle au sein d'une région d'intérêt. Jusqu'à présent, l'utilisation des LCBD s'est restreinte à des échelles locales ou régionales avec un petit nombre de sites dont la composition en espèces est entièrement connue. Dans ce mémoire, j'ai examiné la variation des LCBD sur de grandes étendues spatiales, incluant des régions riches et pauvres en espèces. Pour ce faire, j'ai utilisé les arbres de régression additifs bayésiens (BARTs) pour prédire la répartition des parulines en Amérique du Nord à partir d'observations provenant de la base de données eBird. Mes résultats ont montré que la relation entre la richesse et les LCBD varie selon la région et l'étendue spatiale où celle-ci est mesurée et qu'elle est influencée par la proportion d'espèces rares dans les communautés. Les modèles de répartition d'espèces ont fourni des estimations fortement corrélées avec les données observées, mais montrant de l'autocorrélation spatiale. Les sites identifiés comme uniques sur de grandes étendues spatiales peuvent donc varier en fonction de la richesse régionale, de l'étendue totale et de la proportion d'espèces rares. Les modèles de répartition d'espèces peuvent être utilisés pour prédire l'unicité écologique sur de grandes étendues spatiales, ce qui pourrait permettre d'identifier des points chauds de diversité bêta et d'importantes cibles de conservation au sein de régions non échantillonnées.
+La diversité bêta est une mesure essentielle pour décrire l'organisation de la biodiversité dans l'espace. Le calcul des contributions locales à la diversité bêta (LCBD), en particulier, permet d'identifier des sites à forte unicité écologique montrant une diversité exceptionnelle au sein d'une région d'intérêt. Jusqu’à présent, l'utilisation des LCBD s'est restreinte à des échelles locales ou régionales avec un petit nombre de sites. Dans ce mémoire, j'ai examiné si les modèles de répartition d'espèces (SDM) permettent d'évaluer l'unicité écologique sur de plus grandes étendues spatiales. J'ai également étudié l’effet des changements d’échelle sur la quantification de la diversité bêta. Pour ce faire, j'ai utilisé la base de données eBird et des arbres de régression additifs bayésiens pour prédire la répartition des parulines en Amérique du Nord. J'ai ensuite calculé les LCBD sur ces prédictions, ce qui permet de couvrir de plus grandes étendues spatiales et un nombre de sites plus élevé.  Mes résultats ont montré que les SDM fournissent des estimations d'unicité fortement corrélées avec les données observées et montrant une association spatiale statistiquement significative. Ils ont également montré que la relation entre la richesse et les LCBD varie selon la région et l'étendue spatiale et qu'elle est influencée par la proportion d'espèces rares dans les communautés. Ainsi, les sites identifiés comme uniques peuvent varier selon les caractéristiques de la région étudiée. Ces résultats montrent que les SDM peuvent être utilisés pour prédire l'unicité écologique, ce qui pourrait permettre d'identifier d'importantes cibles de conservation au sein de régions non échantillonnées.
 
 \textbf{Mots clés}: diversité bêta, unicité écologique, contributions locales à la diversité bêta, modèles de répartition d'espèces, échelle spatiale étendue, eBird.
 
@@ -380,7 +112,7 @@ La diversité bêta est une mesure essentielle pour décrire l'organisation de l
 \anglais
 \chapter*{Abstract}
 
-Beta diversity is an essential measure to describe the organization of biodiversity through space. The calculation of local contributions to beta diversity (LCBD), specifically, allows the identification of sites with high ecological uniqueness and exceptional diversity within a region of interest. To this day, LCBD indices have primarily been used on regional and smaller scales, with relatively few sites. Furthermore, their use is typically restricted to strictly sampled sites with known species composition, leading to gaps in spatial coverage on broad extents. Here, I investigated the variation of LCBD indices over broad spatial extents, including species-poor and species-rich regions, and examined their applicability for spatially continuous data and unsampled sites through species distribution modelling (SDM). To this aim, I used Bayesian additive regression trees (BARTs) to model warbler species composition on spatially continuous data based on observations recorded in the eBird database. My results showed that the relationship between richness and LCBD values varies according to the region and the spatial extent at which it is applied. It is also affected by the proportion of rare species in the community. Species distribution models provided highly correlated estimates with observed data, although spatially autocorrelated. Sites identified as unique over broad spatial extents may therefore vary according to regional richness, total extent size, and the proportion of rare species. Species distribution modelling can be used to predict ecological uniqueness over broad spatial extents, which could help identify beta diversity hotspots and important targets for conservation purposes in unsampled locations.
+Beta diversity is an essential measure to describe the organization of biodiversity through space. The calculation of local contributions to beta diversity (LCBD), specifically, allows the identification of sites with high ecological uniqueness and exceptional diversity within a region of interest. To this day, LCBD indices have primarily been used on regional and smaller scales, with relatively few sites. Furthermore, their use is typically restricted to strictly sampled sites with known species composition, leading to gaps in spatial coverage on broad extents. Here, I examined whether species distribution models (SDMs) can be used to assess ecological uniqueness over broader spatial extents and investigated the effect of scale changes on beta diversity quantification. To this aim, I used observations recorded in the eBird database and Bayesian additive regression trees to model warbler species composition in North America, then computed LCBD indices on the predictions, thus covering a broader spatial extent and a higher number of sites. My results showed that SDMs provide uniqueness estimates highly correlated with observed data with a statistically significant spatial association. They also showed that the relationship between richness and LCBD values varies according to the region and the spatial extent and that it is affected by the proportion of rare species in communities. Sites identified as unique may therefore vary according to regional characteristics. These results show that SDMs can be used to predict ecological uniqueness over broad spatial extents, which could help identify beta diversity hotspots and important targets for conservation purposes in unsampled locations.
 
 \textbf{Keywords}: beta diversity, ecological uniqueness, local contributions to beta diversity, species distribution modelling, broad spatial scale, eBird.
 
@@ -453,7 +185,7 @@ Beta diversity is an essential measure to describe the organization of biodivers
   MEM & Modèles macro-écologiques (\textit{Macroecological models})\\
   RF    & Forêts d'arbres décisionnels (\textit{Random Forests})\\
   SDM   & Modèles de répartition d'espèces (\textit{Species distribution models}) \\
-  SESAM & Modélisation spatialement explicite des assemblages d’espèces (\textit{spatially explicit species assemblage modelling})\\
+  SESAM & Modélisation spatialement explicite des assemblages d’espèces (\textit{Spatially explicit species assemblage modelling})\\
   S-SDM & Modèles de répartition d'espèces superposés (\textit{Stacked species distribution models})\\
   TSS & \textit{True skill statistic}\\
 \end{twocolumnlist}
@@ -469,9 +201,9 @@ Mon parcours à la maîtrise a été une expérience des plus stimulantes. La tr
 
 Merci en premier à mes co-directeurs, Timothée et Pierre. Merci pour vos conseils, merci de m’avoir guidé dans mon parcours, merci d’avoir toujours eu des suggestions pour stimuler mes réflexions en recherche, et merci d’avoir su me dire quand il fallait m’arrêter. J’ai énormément appris grâce à vous et je vous en serai toujours reconnaissant.
 
-Ensuite, merci à tous mes collègues avec qui j’ai eu la chance de vivre cette expérience. Sans vous, mon parcours aurait été beaucoup plus difficile. Je suis ressorti grandi du contact avec chacun et chacune d’entre vous. Merci à Daphnée, Eva et Mathilde pour vos conseils, votre expérience et votre présence très précieuse au début de ma maîtrise. Merci à Francis et Gracielle pour les nombreux projets stimulants, loufoques parfois, complexes à d’autres moments, mais toujours agréables en votre compagnie. Merci à tous les collègues du labo, Andréanne, Fares, Kiri, Marie-Andrée, Miléna, Norma, Philippe, Salomé, Sandrine, Tanya et Valentine.
+Ensuite, merci à tous mes collègues avec qui j’ai eu la chance de vivre cette expérience. Sans vous, mon parcours aurait été beaucoup plus difficile. Je suis ressorti grandi du contact avec chacun et chacune d’entre vous. Merci à Daphnée, Eva et Mathilde pour vos conseils, votre expérience et votre présence très précieuse au début de ma maîtrise. Merci à Francis et Gracielle pour les nombreux projets stimulants, loufoques parfois, complexes à d’autres moments, mais toujours agréables en votre compagnie. Merci à tous les collègues du labo, Andréanne, Fares, Kiri, Marie-Andrée, Miléna, Norma, Philippe, Salomé, Samuel, Sandrine, Tanya et Valentine.
 
-Merci à Andrew d’avoir été tel un guide pour un voyageur intergalactique en recherche. Discuter avec toi donnait parfois l’impression d’aller jusqu’à la fin du monde, sur des sujets aussi variés que la vie, l’univers et tout le reste. Merci cependant pour tous les poissons, et sache que tes conseils, loin d’être généralement inoffensifs, ont toujours été utiles.
+Merci à Andrew d’avoir été tel un guide pour un voyageur intergalactique en recherche. Discuter avec toi donnait parfois l’impression d’aller à un restaurant à la fin du monde, sur des sujets aussi variés que la vie, l’univers et tout le reste. Merci cependant pour tous les \textit{Poisson}, et sache que tes conseils, loin d’être généralement inoffensifs, ont toujours été utiles.
 
 Merci au FRQNT et à BIOS², dont le soutien financier a permis la réalisation de ces travaux. 
 
@@ -496,21 +228,94 @@ Merci finalement à mes parents pour leur éternel soutien. Merci d’être pré
 %%%%%%%%%%%%%%%%  I N T R O D U C T I O N  %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%                           %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{introduction}
+
+\francais
+\chapter*{Introduction}
+\input{assets/_introduction.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%  A R T I C L E 1  %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{article1}
+
+\setcounter{corA}{0} % Pour recommencer à compter les def,
+\setcounter{secnumdepth}{1}
+\renewcommand{\thefigure}{\arabic{figure}}
+\setcounter{figure}{0}
+
+\anglais
+
+\revue{Global Ecology and Biogeography}
+\article{Evaluating ecological uniqueness over broad spatial extents using species distribution modelling}
+
+\contributions[]%[Mes contributions et le rôle des coauteurs]
+{
+    GD developed and performed the analyses and wrote the first version of the manuscript;
+
+    TP developed a preliminary version of the analyses. 
+    
+    PL and TP provided guidance on the analyses and interpretation of the results and revised the manuscript.
+    
+    All authors read and approved the manuscript.\\[1cm]
+}
+
+\auteur{Gabriel Dansereau}
+\auteur{Pierre Legendre}
+\auteur{Timothée Poisot}
+\adresse{Département de sciences biologiques, Université de Montréal\\
+  1375 avenue Thérèse-Lavoie-Roux, Montréal, QC, Canada H2V 0B3}
+
+\maketitle
+
+\begin{resume}{diversité bêta, unicité écologique, contributions locales à la diversité bêta, modèles de répartition d'espèces, échelle spatiale étendue, eBird}
+  
+  Objectif: La mesure des contributions locales à la diversité bêta (LCBD) permet d'identifier les sites à forte unicité écologique et ayant une composition en espèces exceptionnelle au sein d'une région d'intérêt. Or, l'utilisation de cette mesure est typiquement restreinte aux échelles locales et régionales avec un petit nombre de sites, puisqu'elle requiert des informations sur la composition complète des communautés parfois difficiles à acquérir à grande échelle spatiale. Dans cette étude, nous avons examiné comment la mesure des LCBD peut être prédite sur de grandes étendues spatiales à l'aide de modèles de répartition d'espèces et de données de science citoyenne. Nous avons également examiné l'effet du changement d'échelle sur la quantification de la diversité bêta.
+
+  Lieu: Amérique du Nord
+  
+  Période de temps: Années 2000
+  
+  Taxon étudié: Parulidés
+  
+  Méthodes: Nous avons utilisé les arbres de régression additifs bayésiens (BARTs) pour prédire la répartition des parulines en Amérique du Nord à l'aide de données provenant de la base de données eBird. Nous avons ensuite calculé les valeurs de LCBD pour les données observées et prédites, puis nous avons examiné la différence par site à l'aide d'une comparaison directe, d'un test d'association spatiale et de modèles de régression linéaire généralisés. Nous avons également examiné la variation de la relation entre les valeurs de LCBD et la richesse spécifique entre différentes régions et sur différentes étendues spatiales, ainsi que l'effet de la proportion d'espèces rares sur cette relation.
+  
+  Résultats: Nos résultats ont montré que la relation entre la richesse et les LCBD varie selon la région et l'étendue spatiale où celle-ci est mesurée et qu'elle est influencée par la proportion d'espèces rares dans la communauté. Les modèles de répartition d'espèces ont fourni des estimations fortement corrélées avec les données observées et montrant une association spatiale statistiquement significative.
+  
+  Principales conclusions: Les sites identifiés comme uniques sur de grandes étendues spatiales peuvent varier en fonction de la richesse régionale, de l'étendue totale et de la proportion d'espèces rares dans la communauté. Les modèles de répartition d'espèces peuvent être utilisés pour prédire l'unicité écologique sur de grandes étendues spatiales, ce qui pourrait permettre d'identifier des points chauds de diversité bêta et d'importantes cibles de conservation au sein de régions non échantillonnées.
+
+\end{resume}
+
+\begin{abstract}{beta diversity, ecological uniqueness, local contributions to beta diversity, species distribution modelling, broad spatial scale, eBird}
+
+  Aim: Local contributions to beta diversity (LCBD) can be used to identify sites with high ecological uniqueness and exceptional species composition within a region of interest. Yet, these indices are typically used on local or regional scales with relatively few sites, as they require information on complete community compositions difficult to acquire on larger scales. Here, we investigated how LCBD indices can be predicted over broad spatial extents using species distribution modelling and citizen science data and examined the effect of scale changes on beta diversity quantification.
+  
+  Location: North America.
+  
+  Time period: 2000s.
+  
+  Major taxa studied: Parulidae. 
+  
+  Methods: We used Bayesian additive regression trees (BARTs) to predict warbler species distributions in North America based on observations recorded in the eBird database. We then calculated LCBD indices for observed and predicted data and examined the site-wise difference using direct comparison, a spatial association test, and generalized linear regression. We also investigated the relationship between LCBD values and species richness in different regions and at various spatial extents and the effect of the proportion of rare species on the relationship. 
+  
+  Results: Our results showed that the relationship between richness and LCBD values varies according to the region and the spatial extent at which it is applied. It is also affected by the proportion of rare species in the community. Species distribution models provided uniqueness estimates highly correlated with observed data with a statistically significant spatial association.
+  
+  Main conclusions: Sites identified as unique over broad spatial extents may vary according to the regional richness, total extent size, and the proportion of rare species. Species distribution modelling can be used to predict ecological uniqueness over broad spatial extents, which could help identify beta diversity hotspots and important targets for conservation purposes in unsampled locations.
+
+\end{abstract}
+
+\input{assets/_article1.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%  A R T I C L E 2  %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%  CONCLUSION  %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{conclusion}
+
+\francais
+\chapter*{Conclusion}
+\input{assets/_conclusion.tex}
+
 %%
 %% etc.
 
@@ -532,13 +337,36 @@ Merci finalement à mes parents pour leur éternel soutien. Merci d’être pré
 \appendix
  % Les annexes se font comme les chapitres. Le fichier
  % commence par \francais ou \anglais et ensuite
- % \chapter{..}. Le reste est parreil à un chapitre normal.
+ % \chapter{..}. Le reste est pareil à un chapitre normal.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%   A N N E X E 1   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%                   %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{appendix_joss}
+
+\setcounter{secnumdepth}{0}
+\renewcommand{\thefigure}{A\arabic{figure}}
+\setcounter{figure}{0}
+
+ \anglais 
+
+ \revue[This article was published in ]{Journal of Open Source Software}
+ \article{SimpleSDMLayers.jl and GBIF.jl: A Framework for Species Distribution Modelling in Julia}
+
+\contributions[]
+{
+    GD and TP developed the software. GD wrote the manuscript.
+}
+
+\auteur{Gabriel Dansereau}
+\auteur{Timothée Poisot}
+\adresse{Département de sciences biologiques, Université de Montréal\\
+  1375 avenue Thérèse-Lavoie-Roux, Montréal, QC, Canada H2V 0B3}
+
+\maketitle
+
+\input{assets/_appendix_joss.tex}
+
 %%
 %% etc.
 
