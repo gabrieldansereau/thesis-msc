@@ -166,8 +166,8 @@
    Septi\`eme\or Huiti\`eme\or Neuvi\`eme\or Dixi\`eme\or Onzi\`eme\or
    Douzi\`eme\or Treizi\`eme\or Quatorzi\`eme\or Quinzi\`eme\or
    Seizi\`eme\or Dix-septi\`eme\or Dix-huiti\`eme\or Dix-neuvi\`eme\or
-   Vingti\`eme\fi}\space partie.}
-\def\parttocentryen{\partname\ \thepart.}
+   Vingti\`eme\fi}\space partie}
+\def\parttocentryen{\partname\ \thepart}
 
 \def\articletocentryfr{\ifcase\value{part}\or Premier\or Deuxi\`eme\or
    Troisi\`eme\or Quatri\`eme\or Cinqui\`eme\or Sixi\`eme\or
@@ -1008,7 +1008,7 @@
 }
 
 \def\partrunhead#1#2#3{%
-  \@ifnotempty{#2}{\uppercase{#1 #2}\@ifnotempty{#3}{. }}%
+  \@ifnotempty{#2}{\uppercase{#1 #2}\@ifnotempty{#3}{ }}%
   \def\@tempa{#3}%
   \ifx\@empty\@tempa\else\uppercasenonmath\@tempa\@tempa\fi}
 \let\chapterrunhead\partrunhead
@@ -1059,7 +1059,7 @@
 
 \def\preparticle{
     \def\finarticle{  %fin article est appelé au début de chaque chapitre
-        \def\thesection{\thechapter.\arabic{section}}
+        \def\thesection{\thechapter\arabic{section}}
         \let\finarticle\relax%
         \c@chapter\dms@c@chapter
         \let\dms@c@chapter\undefined
@@ -1085,14 +1085,14 @@
             \let\@secnumber\thechapter
             \@tocwriteb\tocchapter{chapter}{#2} %Écrit chapitre dans la toc
         \else
-            \addcontentsline{toc}{chapter}{\articletocentry\ \dms@articlename. #2} %Écrit article dans la toc
+            \addcontentsline{toc}{chapter}{\articletocentry\ \dms@articlename #2} %Écrit article dans la toc
         \fi
     \else
         \ifarticleenchapitre
             \let\@secnumber\thechapter
             \@tocwriteb\tocchapter{chapter}{#1} %Écrit chapitre dans la toc
         \else
-            \addcontentsline{toc}{chapter}{\articletocentry\ \dms@articlename. #1}
+            \addcontentsline{toc}{chapter}{\articletocentry\ \dms@articlename #1}
         \fi
     \fi
     \dms@makearticlehead{#2}
@@ -1100,7 +1100,7 @@
 
 \def\dms@sarticle#1{
     \titre{#1}
-    \addcontentsline{toc}{chapter}{\articletocentry\ \dms@articlename. #1}
+    \addcontentsline{toc}{chapter}{\articletocentry\ \dms@articlename #1}
    % \@tocwriteb\tocpart{part}{#1}
     \dms@makearticlehead{#1}
 }
@@ -1138,7 +1138,7 @@
         \ifarticleenchapitre
             \vbox{\LARGE\noindent\chaptername\ \the\c@chapter\strut} %en tête en chapitre
         \else
-          \do\dms@parname   \vbox{\LARGE\noindent\articletocentry\ \dms@articlename.\strut} %i-eme article
+          \do\dms@parname   \vbox{\LARGE\noindent\articletocentry\ \dms@articlename\strut} %i-eme article
         \fi
         \par\vfil
         \fontsize{30pt}{25pt}\selectfont
@@ -1180,7 +1180,7 @@
             \ifarticleenchapitre
                 \vbox{\LARGE\noindent\chaptername\ \the\c@chapter\strut} %en tête en chapitre
             \else
-                \vbox{\LARGE\noindent\articletocentry\ \dms@articlename.\strut} %i-eme article
+                \vbox{\LARGE\noindent\articletocentry\ \dms@articlename\strut} %i-eme article
             \fi
         \egroup
         \hrule width0pt height32pt depth0pt
@@ -1304,7 +1304,7 @@
         {\ifvmode\removelastskip\abstractskip\else\par\abstractskip\fi
         \vbox\bgroup\smaller\smaller\narrower\narrower
             \@anglais
-            \noindent{\expandafter\larger\expandafter\sc\abstractname.}\ \ignorespaces}
+            \noindent{\expandafter\larger\expandafter\sc\abstractname}\ \ignorespaces}
         {\egroup}
     \renewenvironment{abstract}[1]
         {\def\@arg{##1}\begin{abstract*}}
@@ -1313,7 +1313,7 @@
         {\ifvmode\removelastskip\abstractskip\else\par\abstractskip\fi
         \vbox\bgroup\smaller\smaller\narrower\narrower
             \@francais
-            \noindent{\expandafter\larger\expandafter\sc\abstractname.}\ \ignorespaces}
+            \noindent{\expandafter\larger\expandafter\sc\abstractname}\ \ignorespaces}
         {\egroup}
     \newenvironment{resume}[1]
         {\def\@arg{##1}\begin{resume*}}
@@ -1676,10 +1676,10 @@
         \@xp\@makeschapterhead\@xp{#2}%
     \@afterheading
         \makeatletter
-        \@input{\jobname.#1}%
+        \@input{\jobname#1}%
         \if@filesw
             \@xp\newwrite\csname tf@#1\endcsname
-            \immediate\@xp\openout\csname tf@#1\endcsname \jobname.#1\relax
+            \immediate\@xp\openout\csname tf@#1\endcsname \jobname#1\relax
         \fi
         \global\@nobreakfalse \endgroup
         \newpage
@@ -1717,14 +1717,14 @@
 \renewenvironment{proof}[1][\proofname]{\par \normalfont \noindent
   \topsep6\p@\@plus6\p@ \trivlist \itemindent0pt
   \item[\hskip\labelsep\scshape
-    #1\@addpunct{.}]\ignorespaces
+    #1\@addpunct{}]\ignorespaces
 }{%
   \qed\endtrivlist
 }
 \newenvironment{demo}[1][\proofname]{\par \normalfont \noindent
   \topsep6\p@\@plus6\p@ \trivlist \itemindent0pt
   \item[\hskip\labelsep\bfseries
-    #1\@addpunct{.}]\ignorespaces
+    #1\@addpunct{}]\ignorespaces
 }{%
   \qed\endtrivlist
 }
@@ -1736,7 +1736,7 @@
     \let\thm@indent\noindent % no indent
     \thm@headfont{\bfseries}% heading font is bold
     %%  \thm@notefont{}% same as heading font
-    \thm@headpunct{.}% add period after heading
+    \thm@headpunct{}% add period after heading
     %%  \let\thm@swap\@gobble
     \thm@preskip=.5\lineskip
     \thm@postskip=\thm@preskip
