@@ -1304,7 +1304,7 @@
         {\ifvmode\removelastskip\abstractskip\else\par\abstractskip\fi
         \vbox\bgroup\smaller\smaller\narrower\narrower
             \@anglais
-            \noindent{\expandafter\larger\expandafter\sc\abstractname.}\ \ignorespaces}
+            \noindent{\expandafter\larger\expandafter\sc\abstractname}\ \ignorespaces}
         {\egroup}
     \renewenvironment{abstract}[1]
         {\def\@arg{##1}\begin{abstract*}}
@@ -1313,7 +1313,7 @@
         {\ifvmode\removelastskip\abstractskip\else\par\abstractskip\fi
         \vbox\bgroup\smaller\smaller\narrower\narrower
             \@francais
-            \noindent{\expandafter\larger\expandafter\sc\abstractname.}\ \ignorespaces}
+            \noindent{\expandafter\larger\expandafter\sc\abstractname}\ \ignorespaces}
         {\egroup}
     \newenvironment{resume}[1]
         {\def\@arg{##1}\begin{resume*}}
