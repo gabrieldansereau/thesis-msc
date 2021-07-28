@@ -1138,7 +1138,7 @@
         \ifarticleenchapitre
             \vbox{\LARGE\noindent\chaptername\ \the\c@chapter\strut} %en tête en chapitre
         \else
-          \do\dms@parname   \vbox{\LARGE\noindent\articletocentry\ \dms@articlename.\strut} %i-eme article
+          \do\dms@parname   \vbox{\LARGE\noindent\articletocentry\ \dms@articlename \strut} %i-eme article
         \fi
         \par\vfil
         \fontsize{30pt}{25pt}\selectfont
@@ -1180,7 +1180,7 @@
             \ifarticleenchapitre
                 \vbox{\LARGE\noindent\chaptername\ \the\c@chapter\strut} %en tête en chapitre
             \else
-                \vbox{\LARGE\noindent\articletocentry\ \dms@articlename.\strut} %i-eme article
+                \vbox{\LARGE\noindent\articletocentry\ \dms@articlename \strut} %i-eme article
             \fi
         \egroup
         \hrule width0pt height32pt depth0pt
